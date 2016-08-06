@@ -27,6 +27,11 @@
 					<h3><%=link_to article.title, article_path(article) %></h3>
 						<p><%= article.body %></p>
 						<% end %>
+						<% if logged_in? %>
+							<p>Current User: <%= (current_user.name) %></p>
+           		<p><%=link_to 'create new article', new_article_path %></p>
+           		<p><%=link_to 'Logout', logout_path, method: "delete" %></p>
+            <% end %>
 					</div>
 					<div class="four columns">
 					<h3>New Promotion</h3>
