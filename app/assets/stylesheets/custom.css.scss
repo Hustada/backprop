@@ -1,4 +1,6 @@
-
+h2 {
+	font-size: 3.2rem;
+}
 
 .section_one {
 	background-color: #fff;
@@ -65,4 +67,16 @@ nav {
 .sidebar_links li {
 	list-style: none;
 	text-decoration: none;
+}
+
+/* signup page */
+
+.signup-title {
+	text-align: center;
+}
+
+/* login page */
+
+.login-title {
+	text-align: center;
 }

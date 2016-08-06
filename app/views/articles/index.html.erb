@@ -24,12 +24,12 @@
 				<div class="row">
 					<div class="eight columns">
 					<% @articles.each do |article| %>
-					<h2><%=link_to article.title, article_path(article) %></h2>
+					<h3><%=link_to article.title, article_path(article) %></h3>
 						<p><%= article.body %></p>
 						<% end %>
 					</div>
 					<div class="four columns">
-					<h2>New Promotion</h2>
+					<h3>New Promotion</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum imperdiet nisl id venenatis aliquam. Phasellus ullamcorper eget enim vel aliquam. Integer vel tincidunt risus, sed ultrices tellus. Proin sit amet aliquet orci, in scelerisque risus.</p>
 						<ul class="sidebar_links">
 							<li><a href="#">Recent News</a></li>

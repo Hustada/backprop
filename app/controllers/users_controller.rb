@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 				flash[:notice] = "User successfully created"
 				redirect_to root_path
 			else
-				render new
+				render 'new'
 			end
 	end
 
@@ -27,6 +27,6 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:name, :email)
+		params.require(:user).permit(:name, :email, :password, :password_confirmation)
 	end
 end
