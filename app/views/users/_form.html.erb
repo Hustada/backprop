@@ -9,17 +9,17 @@
 	     </ul>
 	    </div>
 	<% end %>
-		<%= f.label :name %><br>
-		<%= f.text_field :name %>
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'u-full-width' %>
 	
-		<%= f.label :email %><br>
-		<%= f.text_field :email %>
+		<%= f.label :email %>
+		<%= f.text_field :email, class: 'u-full-width' %>
 
 		<%= f.label :password %>
-		<%= f.password_field :password %>
+		<%= f.password_field :password, class: 'u-full-width' %>
 
 		<%= f.label :password_confirmation %>
-		<%= f.password_field :password_confirmation %>
+		<%= f.password_field :password_confirmation, class: 'u-full-width' %>
 
 	<p>
 		<%=	f.submit %>
