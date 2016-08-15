@@ -27,6 +27,7 @@
 					<h3><%=link_to article.title, article_path(article) %></h3>
 						<p><%= simple_format(index.zero? ?  article.body : truncate(article.body, length: 300)) %></p>
 						<% end %>
+						<%= will_paginate @articles %>
 						<% if logged_in? %>
 							<p>Current User: <%= (current_user.name) %></p>
            		<p><%=link_to 'create new article', new_article_path %></p>
