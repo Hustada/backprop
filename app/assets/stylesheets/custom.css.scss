@@ -1,5 +1,23 @@
-h2 {
+body {
+	background-color: #EEE;
+}
+
+p {
+	font-family: "Gotham SSm A", "Gotham SSm B", "sans-serif"
+}
+
+.article-title {
 	font-size: 3.2rem;
+	color: #000;
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.article-title a {
+	font-size: 3.2rem;
+	color: #000;
+	font-size: 30px;
+	font-weight: 700;
 }
 
 .section_one {
@@ -33,6 +51,7 @@ nav {
 .main-nav li {
 	display: inline-block;
 	margin-left: 40px;
+	font-family: "Gotham SSm A", "Gotham SSm B", "sans-serif";
 }
 
 .main-nav li a:link,
@@ -60,6 +79,9 @@ nav {
 .section_1 a {
   text-decoration: none;
 }
+.date-copy {
+	color: #999;
+}
 
 
 /* sidebar */
@@ -67,6 +89,13 @@ nav {
 .sidebar_links li {
 	list-style: none;
 	text-decoration: none;
+	font-family: "Gotham SSm A", "Gotham SSm B", "sans-serif";
+	color: #FFF;
+}
+
+.sidebar_links li a {
+	color: #000;
+	font-weight: bold;
 }
 
 /* signup page */

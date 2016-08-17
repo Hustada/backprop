@@ -24,18 +24,15 @@
 				<div class="row">
 					<div class="eight columns">
 					<% @articles.each_with_index do |article, index| %>
-					<h3><%=link_to article.title, article_path(article) %></h3>
-						<p><%= simple_format(index.zero? ?  article.body : truncate(article.body, length: 300)) %></p>
+					<h3 class="article-title"><%=link_to article.title, article_path(article) %></h3>
+					<i class="date-copy"><%= time_ago_in_words(article.created_at) %> ago, by Mark Hustad</i>
+						<p><%= simple_format(index.zero? ?  article.body : truncate(article.body, length: 300)) %><%= link_to 'read more', article_path(article) unless index.zero? %></p>
 						<% end %>
 						<%= will_paginate @articles %>
-						<% if logged_in? %>
-							<p>Current User: <%= (current_user.name) %></p>
-           		<p><%=link_to 'create new article', new_article_path %></p>
-           		<p><%=link_to 'Logout', logout_path, method: "delete" %></p>
-            <% end %>
+						
 					</div>
 					<div class="four columns">
-					<h3>New Promotion</h3>
+					<h3 class="article-title">New Promotion</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum imperdiet nisl id venenatis aliquam. Phasellus ullamcorper eget enim vel aliquam. Integer vel tincidunt risus, sed ultrices tellus. Proin sit amet aliquet orci, in scelerisque risus.</p>
 						<ul class="sidebar_links">
 							<li><a href="#">Recent News</a></li>
@@ -44,6 +41,12 @@
 							<li><a href="#">Games</a></li>
 							<li><a href="#">Streaming</a></li>
 						</ul>
+						<% if logged_in? %>
+							<p>Current User: <%= (current_user.name) %><br>
+           		<%=link_to 'create new article', new_article_path %><br>
+           		<%=link_to 'Logout', logout_path, method: "delete" %><br>
+           		<%=link_to 'Login', login_path %></p>
+           		<% end %>
 					</div>
 				</div>
 			</div>
