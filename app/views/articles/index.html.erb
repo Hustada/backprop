@@ -19,10 +19,10 @@
       </div>
     </nav>
 	<body>
-		<div class="section_1">
+		<section class="section_1">
 			<div class="container">
 				<div class="row">
-					<div class="eight columns">
+					<div class="seven columns">
 					<% @articles.each_with_index do |article, index| %>
 					<h3 class="article-title"><%=link_to article.title, article_path(article) %></h3>
 					<i class="date-copy"><%= time_ago_in_words(article.created_at) %> ago, by Mark Hustad</i>
@@ -35,16 +35,17 @@
 						<%= will_paginate @articles %>
 					</div>
 
-					<div class="four columns">
-						<h3 class="article-title">New Promotion</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum imperdiet nisl id venenatis aliquam. Phasellus ullamcorper eget enim vel aliquam. Integer vel tincidunt risus, sed ultrices tellus. Proin sit amet aliquet orci, in scelerisque risus.</p>
-							<ul class="sidebar_links">
-								<li><a href="#">Recent News</a></li>
-								<li><a href="#">Popular Articles</a></li>
-								<li><a href="#">Reviews</a></li>
-								<li><a href="#">Games</a></li>
-								<li><a href="#">Streaming</a></li>
-							</ul>
+					<div class="five columns">
+						<h3 class="article-title">Featured Articles</h3>
+						<% @articles.each do |article| %>
+						<h6><%=link_to article.try(:title), article_path(article) %></h6>
+							<% end %>
+							<br>
+							<div class>
+					      <label for="exampleEmailInput">Your email</label>
+					      <input class="u-full-width" type="email" placeholder="Enter your email" id="exampleEmailInput">
+					      <input type="submit" value="Join">
+					    </div>
 						<% if logged_in? %>
 							<p>Current User: <%= (current_user.name) %><br>
            		<%=link_to 'create new article', new_article_path %><br>
@@ -55,7 +56,30 @@
 					</div>
 				</div>
 			</div>
+		</section>
+
+	<section class="section_2">
+		<div class="container">
+			<div class="row">
+				<div class="four columns">
+					<h3>Reviews</h3>
+						<h6 class="section-two-subtitle">LOREM IPSUM DOLORE SED</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+				<div class="four columns">
+					<h3>Headlines</h3>
+						<h6 class="section-two-subtitle">LOREM IPSUM DOLORE SED</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+				<div class="four columns">
+					<h3>Offer</h3>
+						<h6 class="section-two-subtitle">LOREM IPSUM DOLORE SED</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+			</div>
 		</div>
+	</section>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="js/custom.js"></script>
 	</body>
