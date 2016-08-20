@@ -8,7 +8,13 @@
 		<div class="twelve columns">
 			<h3 class="article-title js--article-title"><%= @article.title %></h3><br>
 				<p class="article-body js--article-body"><%= @article.body %></p>
-				<%=link_to 'home', root_path %>
+				<p><%=link_to 'home', root_path %></p>
+				<% if logged_in? %>
+				<%=link_to 'delete article', (@article),
+										method: :delete,
+										class: "button",
+										data: {confirm: "Are you sure?" } %>
+				<% end %>
 		</div>
 	</div>
 </div>
