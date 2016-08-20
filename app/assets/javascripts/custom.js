@@ -1,0 +1,34 @@
+$(document).ready(function() {
+
+  /* This is sort of cool but might be overkill */
+     
+    /* For the sticky navigation  something here*/
+    $('.js--section_1').waypoint(function(direction) {
+        if (direction == "down") {
+            $('nav').addClass('sticky');
+        } else {
+            $('nav').removeClass('sticky');
+        }
+    }, {
+      offset: '60px;'
+    });
+    
+    /* Navigation scroll */
+    $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    });
+
+    // $('.flash-message').fadeIn('fast').delay(5000).fadeOut('fast');
+    
+});

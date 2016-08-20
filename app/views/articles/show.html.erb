@@ -1,6 +1,6 @@
 <header>
 <% if @article.header.url.present? %>
-	<%= image_tag @article.header.url(:large), class: "article-show-image" %>
+	<%= image_tag @article.header.url, class: "article-show-image" %>
 <% end %>
 </header>
 <div class="container">

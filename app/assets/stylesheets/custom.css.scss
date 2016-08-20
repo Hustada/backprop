@@ -5,7 +5,38 @@ Basecolor(dark) = #27211d;
 Basecolor(light) = #f39c12;
 */
 
+/*.columns {
+	border-right: .5px solid #999;
+}*/
 
+/* CSS for test page */
+.header-2 {
+	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('gtav.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('gtav.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+  color: #fff;
+  margin: 0;
+}
+
+/* header */
+
+.header-1 {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), image-url('milit.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), image-url('milit.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    color: #fff;
+    margin: 0;
+}
+
+.button.main-button {
+	color: #fff;
+}
 
 body {
 	background-color: #eaeaea;
@@ -15,9 +46,7 @@ p {
 	font-family: "Gotham SSm A", "Gotham SSm B", "sans-serif"
 }
 
-/*.columns {
-	border-right: .5px solid #999;
-}*/
+
 
 section {
 	padding: 80px 0;
@@ -49,6 +78,7 @@ section {
 
 .header-title {
 	text-align: center;
+	font-family: "Droid Serif"
 }
 
 /* Nav */
@@ -59,10 +89,6 @@ section {
 	margin-top: 50px;
   margin-bottom: 4.5rem;
   margin-left: 20px;
-}
-
-nav {
-  background-color: black;
 }
 
 .main-nav li {
@@ -81,6 +107,29 @@ nav {
     border-bottom: 2px solid transparent;
     -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
+}
+
+
+/* Sticky Nav */
+
+.sticky {
+  position: fixed;
+  height: 70px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ededed; /* Try darker version => #e5e5e5 */
+  box-shadow: 0 2px 2px #efefef;
+  z-index: 9999;
+  color: #222;
+}
+
+.sticky .main-nav { margin-top: 25px; }
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 5px 0;
+    color: #666;
 }
 
 /* main content */
@@ -142,7 +191,8 @@ color: #27211d;
 
 /* article-show */
 
-.article-show-image {
+img.article-show-image {
+	background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
 	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
   background-size: cover;
@@ -163,6 +213,4 @@ color: #27211d;
 	color: #f39c12;
 	font-weight: bold;
 }
-
-
 
