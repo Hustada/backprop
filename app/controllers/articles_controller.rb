@@ -18,13 +18,13 @@ class ArticlesController < ApplicationController
 	end
 
 	def index
-		@articles = Article.all.order('created_at DESC').paginate(page: params[:page],per_page: 5)
+		@articles = Article.all.order('created_at DESC').paginate(page: params[:page],per_page: 4)
 	end
 
 
 private
 
 	def article_params
-		params.require(:article).permit(:title, :body, :image)
+		params.require(:article).permit(:title, :body, :image, :header)
 	end
 end

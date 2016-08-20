@@ -27,7 +27,7 @@
 					<h3 class="article-title"><%=link_to article.title, article_path(article) %></h3>
 					<i class="date-copy"><%= time_ago_in_words(article.created_at) %> ago, by Mark Hustad</i>
 					<% if article.image.present? %>
-					<%= image_tag article.image.url(:large), :class => "u-max-full-width" %>
+					<%= image_tag article.image.url(:large), :class => "u-max-full-width article-image-index" %>
 					<% end %>
 						<p class="article-paragraph"><%= simple_format(index.zero? ?  article.body : truncate(article.body, length: 300)) %></p>
 						<p class="read-more"><%= link_to 'read more', article_path(article) unless index.zero? %></p>

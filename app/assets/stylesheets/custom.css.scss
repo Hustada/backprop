@@ -87,6 +87,9 @@ nav {
 	color: #999;
 }
 
+.article-image-index {
+	width: 100%;
+}
 
 /* sidebar */
 
@@ -123,12 +126,14 @@ nav {
 /* article-show */
 
 .article-show-image {
-	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
   background-size: cover;
   background-position: center;
-  height: 100vh;
   background-attachment: fixed;
   color: #fff;
   margin: 0;
+  width: 100%;
 }
+
+

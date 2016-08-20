@@ -1,11 +1,14 @@
-<header class="header-1">
-	<%= image_tag @article.image.url, class: "article-show-image" %> 
+<header>
+<% if @article.header.url.present? %>
+	<%= image_tag @article.header.url(:large), class: "article-show-image" %>
+<% end %>
 </header>
 <div class="container">
 	<div class="row">
 		<div class="twelve columns">
 			<h3 class="article-title js--article-title"><%= @article.title %></h3><br>
 				<p class="article-body js--article-body"><%= @article.body %></p>
+				<%=link_to 'home', root_path %>
 		</div>
 	</div>
 </div>
