@@ -15,8 +15,10 @@
     <center>
       <h1 class="header-title js--main-title">Gaming Isn't Dead</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <% unless logged_in? %>
         <%=link_to "Join", signup_path, :class => "button main-button" %>
         <%=link_to "Login", login_path, :class => "button main-button" %>
+        <% end %>
     </div>
     </center>
     <div class="row">
