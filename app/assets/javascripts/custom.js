@@ -30,7 +30,13 @@ $(document).ready(function() {
     });
 
 
-    /* Mobile navigation */
+    $('#js--scroll-to-article-title').click(function () {
+       $('html, body').animate({scrollTop: $('.js--article-title').offset().top}, 1000); 
+    });
+
+   
+/* Mobile navigation */
+
     $('.js--nav-icon').click(function() {
         var nav = $('.js--main-nav');
         var icon = $('.js--nav-icon i');

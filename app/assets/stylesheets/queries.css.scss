@@ -1,6 +1,63 @@
-@media only screen and (min-width: 768px) {
-   .article-title a {
-   		text-align: center;
-   }
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 937px) {
+    body { font-size: 16px; }
+    section { padding: 30px 0; }
+    
+    p {
+        text-align: center;
+    }
+    
+    .main-nav { display: none; }
+    .mobile-nav-icon {display: inline-block;}
+    
+    .main-nav {
+        float: left;
+        margin-top: 30px;
+        margin-left: 25px;
+    }
+    
+    .main-nav li {
+        display: block;
+    }
+    
+    .main-nav li a:link,
+    .main-nav li a:visited {
+        display: block;
+        border: 0;
+        padding: 10px 0;
+        font-size: 100%;
+    }
+    
+    .sticky .main-nav { 
+        margin-top: 10px; 
+    }
 
+    .sticky .main-nav li a:link,
+    .sticky .main-nav li a:visited { padding: 10px 0; }
+    .sticky .mobile-nav-icon { margin-top: 10px; }
+    .sticky .mobile-nav-icon i { color: #555; }
+    
+    .header-1 {
+      height: 60vh;
+      min-height: 240px;
+    }
+
+    .fa fa-arrow-circle-o-down {
+      display: none;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+  .header-title {
+        font-size: 3rem;
+    }
+
+    .title-description {
+        font-size: 1.6rem;
+    }
+
+    .fa fa-arrow-circle-o-down {
+      display: none;
+    }
 }

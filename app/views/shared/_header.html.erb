@@ -6,24 +6,27 @@
               <li><a href="#articles" class="js--scroll-to-contact">Articles</a></li>
               <li><a href="#videos" class="js--scroll-to-main-nav">Videos</a></li>
               <li><a href="#contact" class="js--scroll-to-fan-pics">Contact</a></li>
-              <li><a href="#blog" class="js--scroll-to-fan-pics">Blog</a></li>
+              <li><a href="#blog" class="js--scroll-to-blog">Blog</a></li>
           </ul>
           <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon"></i></a>
       </div>
     </nav>
     <div class="container">
-    <center>
-      <h1 class="header-title js--main-title">Gaming Isn't Dead</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <% unless logged_in? %>
-        <%=link_to "Join", signup_path, :class => "button main-button" %>
-        <%=link_to "Login", login_path, :class => "button main-button" %>
-        <% end %>
+      <div class="title-description">
+        <center>
+          <h1 class="header-title js--main-title">Gaming Isn't Dead</h1>
+            <h2 class="page-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+            <% unless logged_in? %>
+            <%=link_to "Join", signup_path, :class => "button main-button" %>
+            <%=link_to "Login", login_path, :class => "button main-button" %>
+            <% end %>
+        </center>
+      </div>  
     </div>
-    </center>
+    
     <div class="row">
       <div class="centering">
-        <a href="#"><i class="fa fa-arrow-circle-o-down fa-4x header-arrow js--arrow"></i></a>
+        <a href="#"><i class="bounce fa fa-arrow-circle-o-down fa-4x header-arrow js--arrow"></i></a>
       </div>
     </div>
   </header>
