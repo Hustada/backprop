@@ -1,6 +1,4 @@
 $(document).ready(function() {
-
-  /* This is sort of cool but might be overkill */
      
     /* For the sticky navigation  something here*/
     $('.js--section_1').waypoint(function(direction) {
@@ -67,6 +65,6 @@ $(document).ready(function() {
         }        
     });
 
-    // $('.flash-message').fadeIn('fast').delay(5000).fadeOut('fast');
+    $('.flash-message').fadeIn('fast').delay(5000).fadeOut('fast');
     
 });

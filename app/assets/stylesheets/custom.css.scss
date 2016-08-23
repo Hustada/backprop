@@ -293,6 +293,10 @@ img.article-show-image {
   width: 100%;
 }
 
+.article-title {
+  margin-top: 70px;
+}
+
 /* section two */
 
 .section_2 {
@@ -304,3 +308,10 @@ img.article-show-image {
 	font-weight: bold;
 }
 
+/* flash-message */
+
+.flash-message {
+  padding: 20px;
+  background-color: #f39c12;
+  color: #fff;
+}
