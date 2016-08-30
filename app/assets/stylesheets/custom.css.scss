@@ -24,8 +24,8 @@ Basecolor(light) = #f39c12;
 /* header */
 
 .header-1 {
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), image-url('milit.jpeg');
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), image-url('milit.jpeg');
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), image-url('weirdbrick.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), image-url('weirdbrick.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -179,10 +179,10 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ededed; /* Try darker version => #e5e5e5 */
-  box-shadow: 0 2px 2px #efefef;
+  background-color: #27211d; /* Try darker version => #e5e5e5 */
+  box-shadow: 0 2px 2px #27211d;
   z-index: 9999;
-  color: #222;
+  color: #fff;
 }
 
 .sticky .main-nav { margin-top: 25px; }
@@ -190,7 +190,7 @@ section {
 .sticky .main-nav li a:link,
 .sticky .main-nav li a:visited {
     padding: 5px 0;
-    color: #666;
+    color: #f39c12;
 }
 
 /* Mobile navi */
