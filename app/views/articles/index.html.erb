@@ -8,7 +8,28 @@
 	</head>
 
 	<body>
-		<%= render 'shared/header' %>
+	<%= render 'shared/slide_nav' %>
+	<header class="header-1">
+		
+		<div class="container">
+      <div class="title-description">
+        <center>
+          <h1 class="header-title js--main-title">Unless current_user</h1>
+            <h2 class="page-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+            <% unless logged_in? %>
+            <%=link_to "Join", signup_path, :class => "button main-button" %>
+            <%=link_to "Login", login_path, :class => "button main-button" %>
+            <% end %>
+        </center>
+      </div>  
+    </div>
+    
+    <div class="row">
+      <div class="centering">
+        <a href="#"><i class="bounce fa fa-arrow-circle-o-down fa-4x js--scroll-to-title"></i></a>
+      </div>
+    </div>
+		</header>
 		<section class="section_1 js--section_1">
 			<div class="container">
 				<div class="row">
