@@ -21,6 +21,27 @@ Basecolor(light) = #f39c12;
   margin: 0;
 }
 
+/* slide nav */
+
+#trigger {
+  float: right;
+  margin-top: 35px;
+}
+
+.slide-nav li {
+  list-style: none;
+}
+
+.slide-nav li a {
+  text-decoration: none;
+  font-family: sans-serif;
+  list-style: none;
+}
+
+#slider {
+  background-color: #27211d;
+}
+
 /* header */
 
 .header-1 {
@@ -173,13 +194,14 @@ section {
 
 /* Sticky Nav */
 
+/* commenting this out for slide nav
 .sticky {
   position: fixed;
   height: 70px;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #27211d; /* Try darker version => #e5e5e5 */
+  background-color: #27211d; 
   box-shadow: 0 2px 2px #27211d;
   z-index: 9999;
   color: #fff;
@@ -192,6 +214,7 @@ section {
     padding: 5px 0;
     color: #f39c12;
 }
+*/
 
 /* Mobile navi */
 .mobile-nav-icon {

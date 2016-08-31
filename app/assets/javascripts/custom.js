@@ -40,34 +40,41 @@ $(document).ready(function() {
    
 /* Mobile navigation */
 
-    $('.js--nav-icon').click(function() {
-        var nav = $('.js--main-nav');
-        var icon = $('.js--nav-icon i');
+    // $('.js--nav-icon').click(function() {
+    //     var nav = $('.js--main-nav');
+    //     var icon = $('.js--nav-icon i');
         
-        nav.slideToggle(200);
+    //     nav.slideToggle(200);
         
-        if (icon.hasClass('ion-navicon')) {
-            icon.addClass('ion-close-round');
-            icon.removeClass('ion-navicon');
-        } else {
-            icon.addClass('ion-navicon');
-            icon.removeClass('ion-close-round');
-        }        
-    });
+    //     if (icon.hasClass('ion-navicon')) {
+    //         icon.addClass('ion-close-round');
+    //         icon.removeClass('ion-navicon');
+    //     } else {
+    //         icon.addClass('ion-navicon');
+    //         icon.removeClass('ion-close-round');
+    //     }        
+    // });
 
-    $('.js--alt-nav-icon').click(function() {
-        var nav = $('.js--alt-main-nav');
-        var icon = $('.js--alt-nav-icon i');
+    // $('.js--alt-nav-icon').click(function() {
+    //     var nav = $('.js--alt-main-nav');
+    //     var icon = $('.js--alt-nav-icon i');
         
-        nav.slideToggle(200);
+    //     nav.slideToggle(200);
         
-        if (icon.hasClass('ion-navicon')) {
-            icon.addClass('ion-close-round');
-            icon.removeClass('ion-navicon');
-        } else {
-            icon.addClass('ion-navicon');
-            icon.removeClass('ion-close-round');
-        }        
+    //     if (icon.hasClass('ion-navicon')) {
+    //         icon.addClass('ion-close-round');
+    //         icon.removeClass('ion-navicon');
+    //     } else {
+    //         icon.addClass('ion-navicon');
+    //         icon.removeClass('ion-close-round');
+    //     }        
+    // });
+
+    /* slide reveal */
+
+    $('#slider').slideReveal({
+      trigger: $("#trigger"),
+      position: "right"
     });
 
     $('.flash-message').delay(3000).slideDown('slow').delay(500).slideUp('slow');
