@@ -70,6 +70,6 @@ $(document).ready(function() {
         }        
     });
 
-    $('.flash-message').delay(3000).slideDown('slow').delay(5000).slideUp('slow');
+    $('.flash-message').delay(3000).slideDown('slow').delay(500).slideUp('slow');
     
 });
