@@ -38,7 +38,7 @@
 					    </div>
 						<% if logged_in? %>
 							<p>Current User: <%= (current_user.name) %><br>
-           		<%=link_to 'create new article', new_article_path %><br>
+           		<%=link_to 'Create new article', new_article_path %><br>
            		<%=link_to 'Logout', logout_path, method: "delete" %><br>
            		<% else %>
            		<%=link_to 'Login', login_path %></p>
