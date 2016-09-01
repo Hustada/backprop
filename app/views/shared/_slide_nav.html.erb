@@ -9,7 +9,12 @@
 				<li><a href="#">Blog</a></li>
 				<li><a href="#">Videos</a></li>
 				<li><a href="#">Streaming</a></li>
+				<% if logged_in? %>
+				<li><%=link_to 'Logout', logout_path, method: "delete" %></li>
+				<% end %>
 			</ul>
 		</div>	
 	</div>
 </div>
+
+      

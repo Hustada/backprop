@@ -10,7 +10,6 @@
 	<body>
 	<%= render 'shared/slide_nav' %>
 	<header class="header-1">
-		
 		<div class="container">
       <div class="title-description">
         <center>
@@ -20,20 +19,21 @@
             <%=link_to "Join", signup_path, :class => "button main-button" %>
             <%=link_to "Login", login_path, :class => "button main-button" %>
             <% end %>
+            <div class="centering">
+			        <a href="#">
+			        	<i class="bounce fa fa-arrow-circle-o-down fa-4x js--arrow"></i>
+			        </a>
+      			</div>
         </center>
       </div>  
     </div>
     
-    <div class="row">
-      <div class="centering">
-        <a href="#"><i class="bounce fa fa-arrow-circle-o-down fa-4x js--scroll-to-title"></i></a>
-      </div>
-    </div>
+    
 		</header>
 		<section class="section_1 js--section_1">
 			<div class="container">
 				<div class="row">
-					<div class="seven columns">
+					<div class="twelve columns">
 					<% @articles.each_with_index do |article, index| %>
 					<h3 class="article-title js--article-title"><%=link_to article.title, article_path(article) %></h3>
 					<i class="date-copy"><%= time_ago_in_words(article.created_at) %> ago, by Mark Hustad</i>
@@ -46,7 +46,7 @@
 						<%= will_paginate @articles %>
 					</div>
 
-					<div class="five columns">
+					<!-- This is the second column I may or may not use <div class="five columns">
 						<h3 class="article-title">Featured Articles</h3>
 						<% @articles.each do |article| %>
 						<h6><%=link_to article.try(:title), article_path(article) %></h6>
@@ -64,7 +64,7 @@
            		<% else %>
            		<%=link_to 'Login', login_path %></p>
            	<% end %>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</section>
