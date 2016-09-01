@@ -11,6 +11,7 @@
 				<li><a href="#">Streaming</a></li>
 				<% if logged_in? %>
 				<li><%=link_to 'Logout', logout_path, method: "delete" %></li>
+				<li><%=link_to 'Post new article', new_article_path %></li>
 				<% end %>
 			</ul>
 		</div>	
