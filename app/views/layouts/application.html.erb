@@ -2,18 +2,19 @@
 <html>
   <head>
     <title>Experimental</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'false' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'false' %>
+     <%= stylesheet_link_tag    'application', media: 'all' %>
+     <%= javascript_include_tag 'application' %>
+     <%= csrf_meta_tags %>
   </head>
   	<% flash.each do |message_type, message| %>
   <center><div class="flash-message <%= message_type %>"><%= message %></div></center>
 	<% end %>
-
   <body>
-    <%= yield %>
-  </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
-  <script src="jquery.slidereveal.min.js">
 
+    <%= yield %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+    <script src="slidereveal.js"></script>
+    
+  </body>
 </html>
