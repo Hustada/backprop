@@ -1,5 +1,5 @@
 <header>
-<% if @article.header.url.present? %>
+<% if @article.header.present? %>
 	<%= image_tag @article.header.url, class: "article-show-image" %>
 <% end %>
 </header>
