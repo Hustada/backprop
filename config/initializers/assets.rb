@@ -14,4 +14,5 @@ Rails.application.config.assets.precompile += %w(
  'custom.css',
  'skeleton.css',
  'ionicons.min.css',
- 'animate.css' )
+ 'animate.css',
+ 'queries.css' )
