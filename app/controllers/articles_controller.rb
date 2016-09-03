@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_action :logged_in_user
+	before_action :logged_in_user, only: [:create]
 
 	def new
 		@article = Article.new
