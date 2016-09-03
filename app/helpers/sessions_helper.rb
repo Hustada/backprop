@@ -29,6 +29,13 @@ end
 		!current_user.nil?
 	end
 
+	def logged_in_user
+		unless logged_in?
+			flash[:notice] = "Ha Ha, log in first please"
+			redirect_to login_path
+		end
+	end
+
 #forgets a persistent session.
 	def forget(user)
 		user.forget
