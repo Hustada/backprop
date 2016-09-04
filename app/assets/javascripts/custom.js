@@ -43,11 +43,6 @@ $(document).ready(function() {
 
     /* slide reveal */
 
-    $('#slider').slideReveal({
-      trigger: $("#trigger"),
-      position: "right"
-    });
-
     $('.flash-message').delay(3000).slideDown('slow').delay(500).slideUp('slow');
     
 });
