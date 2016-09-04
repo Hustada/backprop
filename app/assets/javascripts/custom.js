@@ -27,6 +27,7 @@ $(document).ready(function() {
       });
     });
 
+    /* waypoints */
 
     $('#js--scroll-to-title').click(function () {
        $('html, body').animate({scrollTop: $('.js--article-title').offset().top}, 1000); 
