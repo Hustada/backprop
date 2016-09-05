@@ -1,0 +1,16 @@
+.nav-wrap {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 280px;
+  margin-left: -290px;
+  font-size: 1em;
+  font-weight: 700;
+  overflow: auto;
+  transition: .25s;
+  z-index: 10;
+}
+
+.nav-show {
+  margin-left: 0;
+}
