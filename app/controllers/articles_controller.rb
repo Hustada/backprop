@@ -22,6 +22,10 @@ class ArticlesController < ApplicationController
 		@articles = Article.all.order('created_at DESC').paginate(page: params[:page],per_page: 2)
 	end
 
+	def edit
+		@article = Article.find(params[:id])
+	end
+
 	def destroy
 		@article = Article.find(params[:id])
 		@article.destroy
