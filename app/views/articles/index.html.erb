@@ -1,13 +1,47 @@
+<!DOCTYPE html>
 <head>
-	<title>Experimental</title>
+		<title>Experimental</title>
 </head>
-<div id="main">
-<%= render 'shared/slide-nav' %>
-	<h1 class="header-title js--main-title">
-		A Title
-	</h1>
-	<span onclick="openNav()" class="button">open</span>
-<body>
-
-</body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <%=link_to "#{current_user.name.capitalize}", new_article_path unless current_user.nil? %>
+  <%= link_to 'About', about_path %>
+  <a href="#">Games</a>
+  <a href="#">Videos</a>
+  <a href="#">Articles</a>
+  <% unless logged_in? %>
+  <%=link_to "Join", signup_path %>
+  <%=link_to "Login", login_path %>
+  <% else %>
+  <%=link_to 'Logout', logout_path, method: "delete" %>
+  <% end %>
 </div>
+
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()" class="button nav-button">Menu</span>
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+<%= render 'shared/header' %>
+	<body>
+		<section class="section_1 js--section_1">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns">
+					<% @articles.each_with_index do |article, index| %>
+					<h3 class="article-title js--article-title"><%=link_to article.title, article_path(article) %></h3>
+					<i class="date-copy"><%= time_ago_in_words(article.created_at) %> ago, by Mark Hustad</i>
+					<% if article.image.present? %>
+					<%= image_tag article.image.url(:large), :class => "u-max-full-width article-image-index" %>
+					<% end %>
+						<p class="article-paragraph"><%= simple_format(index.zero? ?  article.body : truncate(article.body, length: 300)) %></p>
+						<p class="read-more"><%= link_to 'read more', article_path(article) unless index.zero? %></p>
+						<% end %>
+						<%= will_paginate @articles %>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</div>
+</html>

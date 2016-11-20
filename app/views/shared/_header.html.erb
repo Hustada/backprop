@@ -1,9 +1,19 @@
-<div>
-  <nav>
-    <ul>
-      <ul>test</ul>
-      <ul>replacement</ul>
-      <ul>nav for now</ul>
-    </ul>
-  </nav>
-</div>
+<header class="header-1">
+		<div class="container">
+      <div class="title-description">
+        <center>
+          <h1 class="header-title js--main-title">Something</h1>
+            <h2 class="page-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+            <% unless logged_in? %>
+            <%=link_to "Join", signup_path, :class => "button main-button" %>
+            <%=link_to "Login", login_path, :class => "button main-button" %>
+            <% end %>
+            <div class="centering">
+			        <a href="#">
+			        	<i class="bounce fa fa-arrow-circle-o-down fa-4x js--arrow"></i>
+			        </a>
+      			</div>
+        </center>
+      </div>  
+    </div>
+	</header>

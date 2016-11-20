@@ -9,6 +9,25 @@ Basecolor(light) = #f39c12;
 	border-right: .5px solid #999;
 }*/
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  height: 100%;
+}
+
+img {
+  height: 200px;
+}
+
+body {
+  height: 100%;
+}
+
 /* CSS for test page */
 .header-2 {
 	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('gtav.jpg');
@@ -19,6 +38,18 @@ Basecolor(light) = #f39c12;
   background-attachment: fixed;
   color: #fff;
   margin: 0;
+}
+
+.test-header {
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), image-url('wanderer.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), image-url('wanderer.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* slide nav */
@@ -39,18 +70,23 @@ Basecolor(light) = #f39c12;
   list-style: none;
 }
 
+.nav-button {
+  float: right;
+}
+
 #slider {
   background-color: #27211d;
 }
 
 /* header */
 
-.header {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), image-url('wanderer.png');
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), image-url('wanderer.png');
+.header-1 {
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('weirdbrick.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('weirdbrick.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
+  background-attachment: fixed;
   color: #fff;
   margin: 0;
 }
@@ -59,9 +95,6 @@ Basecolor(light) = #f39c12;
 	color: #fff;
 }
 
-body {
-	background-color: #fff;
-}
 
 p {
 	font-family: "Merriweather", "serif";
@@ -338,3 +371,13 @@ img.article-show-image {
   background-color: #f39c12;
   color: #fff;
 }
+
+/* about page */
+
+.container.about-container {
+  margin-top: 40px;
+}
+
+
+
+

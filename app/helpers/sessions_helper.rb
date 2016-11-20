@@ -4,6 +4,12 @@ module SessionsHelper
 		session[:user_id] = user.id
 	end
 
+	def redirect_if_current_user
+		if logged_in?
+			redirect_to root_path
+		end
+	end
+
 	def remember(user)
 		user.remember
 		cookies.permanent.signed[:user_id] = user.id
