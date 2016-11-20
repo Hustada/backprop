@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 	protect_from_forgery with: :exception
 	include SessionsHelper
-	before_action :redirect_if_current_user
-
+	before_action :redirect_if_current_user, only: [:create]
+	
 def new
 end
 

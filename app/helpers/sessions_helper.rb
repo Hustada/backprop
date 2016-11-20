@@ -6,6 +6,7 @@ module SessionsHelper
 
 	def redirect_if_current_user
 		if logged_in?
+			flash[:notice] = "You're already logged in."
 			redirect_to root_path
 		end
 	end
