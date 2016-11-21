@@ -81,8 +81,8 @@ body {
 /* header */
 
 .header-1 {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('weirdbrick.jpg');
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('weirdbrick.jpg');
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('milit.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('milit.jpeg');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -321,6 +321,10 @@ color: #27211d;
 
 .signup-title {
 	text-align: center;
+}
+
+.container.sign-in-container, .container.sign-up-container {
+  margin-top: 40px;
 }
 
 /* login page */
