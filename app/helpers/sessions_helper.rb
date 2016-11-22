@@ -32,6 +32,10 @@ end
 
 # returns true if the user is logged in, false otherwise
 
+def is_admin?
+	current_user.admin?
+end
+
 	def logged_in?
 		!current_user.nil?
 	end

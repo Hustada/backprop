@@ -9,7 +9,7 @@
 			<h3 class="article-title js--article-title"><%= @article.title %></h3><br>
 				<p class="article-body js--article-body"><%= simple_format(@article.body) %></p>
 				<p><%=link_to 'home', root_path %></p>
-				<% if logged_in? %>
+				<% if logged_in?  && is_admin? %>
 				<%=link_to 'delete article', (@article),
 										method: :delete,
 										class: "button",
