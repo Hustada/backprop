@@ -15,6 +15,9 @@
   <% else %>
   <%=link_to 'Logout', logout_path, method: "delete" %>
   <% end %>
+  <% if logged_in? && is_admin? %>
+  <%=link_to 'Add New Article', new_article_path %>
+  <% end %>
 </div>
 
 <!-- Use any element to open the sidenav -->

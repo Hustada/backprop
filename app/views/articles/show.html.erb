@@ -7,7 +7,9 @@
 	<div class="row">
 		<div class="twelve columns">
 			<h3 class="article-title js--article-title"><%= @article.title %></h3><br>
+			<% if @article.video_url.present? %>
 				<div class="videoWrapper"><%= embed(@article.video_url) %></div>
+			<% end %>
 				<p class="article-body js--article-body"><%= simple_format(@article.body) %></p>
 				<p><%=link_to 'home', root_path %></p>
 				<% if logged_in?  && is_admin? %>
