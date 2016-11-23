@@ -1,0 +1,97 @@
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 937px) {
+  /* line 4, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  body {
+    font-size: 16px;
+  }
+
+  /* line 5, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  section {
+    padding: 30px 0;
+  }
+
+  /* line 7, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  p {
+    text-align: center;
+  }
+
+  /* line 11, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .main-nav {
+    display: none;
+  }
+
+  /* line 12, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .mobile-nav-icon {
+    display: inline-block;
+  }
+
+  /* line 14, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .main-nav {
+    float: left;
+    margin-top: 30px;
+    margin-left: 25px;
+  }
+
+  /* line 20, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .main-nav li {
+    display: block;
+  }
+
+  /* line 24, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .main-nav li a:link,
+  .main-nav li a:visited {
+    display: block;
+    border: 0;
+    padding: 10px 0;
+    font-size: 100%;
+  }
+
+  /* line 32, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .sticky .main-nav {
+    margin-top: 10px;
+  }
+
+  /* line 36, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .sticky .main-nav li a:link,
+  .sticky .main-nav li a:visited {
+    padding: 10px 0;
+  }
+
+  /* line 38, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .sticky .mobile-nav-icon {
+    margin-top: 10px;
+  }
+
+  /* line 39, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .sticky .mobile-nav-icon i {
+    color: #555;
+  }
+
+  /* line 41, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .header-1 {
+    height: 60vh;
+    min-height: 240px;
+    background-attachment: initial;
+  }
+
+  /* line 47, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  i.bounce.fa.fa-arrow-circle-o-down {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  /* line 54, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .header-title {
+    font-size: 3rem;
+  }
+
+  /* line 58, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  .title-description {
+    font-size: 1.6rem;
+  }
+
+  /* line 62, /Users/mark_hustad/Desktop/projects/experimental/app/assets/stylesheets/queries.css.scss */
+  i.bounce.fa.fa-arrow-circle-o-down {
+    display: none;
+  }
+}
