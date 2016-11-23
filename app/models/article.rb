@@ -7,4 +7,15 @@ class Article < ActiveRecord::Base
 																		 # :convert_options => { :large => "-quality 92" }
 	validates_attachment_content_type :header, content_type: /\Aimage\/.*\z/
 	# belongs_to :user
+
+	@@video_regexp = [ /^(?:https?:\/\/)?(?:www\.)?youtube\.com(?:\/v\/|\/watch\?v=)([A-Za-z0-9_-]{11})/, 
+                   /^(?:https?:\/\/)?(?:www\.)?youtu\.be\/([A-Za-z0-9_-]{11})/,
+                   /^(?:https?:\/\/)?(?:www\.)?youtube\.com\/user\/[^\/]+\/?#(?:[^\/]+\/){1,4}([A-Za-z0-9_-]{11})/
+                   ]
+
+
+	def video_id
+  	@@video_regexp.each { |m| return m.match(video_url)[1] unless m.nil? }
+	end
+
 end
