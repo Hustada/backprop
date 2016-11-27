@@ -28,6 +28,10 @@ body {
   height: 100%;
 }
 
+iframe {
+  border: none;
+}
+
 /* CSS for test page */
 .header-2 {
 	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('gtav.jpg');
@@ -363,6 +367,11 @@ img.article-show-image {
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
+}
+
+.video-container {
+  background: #1b1d1e;
+  margin-top: 60px;
 }
 .videoWrapper iframe {
   position: absolute;
