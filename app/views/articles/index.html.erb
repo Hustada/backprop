@@ -4,7 +4,7 @@
 </head>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <%=link_to "#{current_user.name.capitalize}", new_article_path unless current_user.nil? %>
+  <%=link_to "#{current_user.name.downcase}", new_article_path unless current_user.nil? %>
   <%= link_to 'About', about_path %>
   <a href="#">Games</a>
   <a href="#">Videos</a>
