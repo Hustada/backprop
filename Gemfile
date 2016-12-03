@@ -17,6 +17,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'font-ionicons-rails'
 gem "font-awesome-rails"
 gem 'auto_html'
+gem 'pry'
+gem 'faker'
+
 # For sign in with google
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'omniauth-twitter'

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 	root 'articles#index'
 
+	get '/auth/:provider/callback', to: 'sessions#third_party'
 	get '/demo', to: 'static_pages#demo'
 	get '/about', to: 'static_pages#about'
 	get '/signup', to: 'users#new'
