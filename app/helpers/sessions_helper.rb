@@ -1,63 +1,7 @@
 module SessionsHelper
 
-	def log_in(user)
-		session[:user_id] = user.id
+	def is_admin?
+		current_user.admin?
 	end
-
-	def redirect_if_current_user
-		if logged_in?
-			flash[:notice] = "You're already logged in."
-			redirect_to root_path
-		end
-	end
-
-	def remember(user)
-		user.remember
-		cookies.permanent.signed[:user_id] = user.id
-		cookies.permanent[:remember_token] = user.remember_token
-	end
-
-# returns the user corresponding to the remember token cookie
-def current_user
-		if (user_id = session[:user_id])
-		@current_user ||= User.find_by(id: user_id)
-	elsif (user_id = cookies.signed[:user_id])
-		user = User.find_by(id: user_id)
-		if user && user.authenticated?(cookies[:remember_token])
-			log_in user
-			@current_user = user
-		end
-	end
-end
-
-# returns true if the user is logged in, false otherwise
-
-def is_admin?
-	current_user.admin?
-end
-
-	def logged_in?
-		!current_user.nil?
-	end
-
-	def logged_in_user
-		unless logged_in?
-			flash[:notice] = "Ha Ha, log in first please"
-			redirect_to login_path
-		end
-	end
-
-#forgets a persistent session.
-	def forget(user)
-		user.forget
-		cookies.delete(:user_id)
-		cookies.delete(:remember_token)
-	end
-
-#logs out the current user
-	def log_out
-		forget(current_user)
-		session.delete(:user_id)
-		@current_user = nil
-	end
+	
 end

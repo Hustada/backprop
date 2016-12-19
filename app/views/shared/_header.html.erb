@@ -4,9 +4,11 @@
         <center>
           <h1 class="header-title js--main-title">Something</h1>
             <h2 class="page-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-            <% unless logged_in? %>
-            <%=link_to "Join", signup_path, :class => "button main-button" %>
-            <%=link_to "Login", login_path, :class => "button main-button" %>
+            <% if user_signed_in? %>
+            <%=link_to 'logout', destroy_user_session_path, method: "delete", class: "button main-button" %>
+            <% else %>
+            <%=link_to "Join", new_user_registration_path, :class => "button main-button" %>
+            <%=link_to "Login", new_user_session_path, :class => "button main-button" %>
             <% end %>
             <div class="centering">
 			        <a href="#">

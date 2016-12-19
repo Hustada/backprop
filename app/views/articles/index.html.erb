@@ -4,19 +4,15 @@
 </head>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <%=link_to "#{current_user.name.downcase}", new_article_path unless current_user.nil? %>
+ <%=link_to "#{current_user.email.downcase}", new_article_path unless current_user.nil? %>
   <%= link_to 'About', about_path %>
   <a href="#">Games</a>
   <a href="#">Videos</a>
   <a href="#">Articles</a>
-  <% unless logged_in? %>
-  <%=link_to "Join", signup_path %>
-  <%=link_to "Login", login_path %>
+  <% if user_signed_in? %>
+  <%=link_to 'logout', destroy_user_session_path, method: "delete" %>
   <% else %>
-  <%=link_to 'Logout', logout_path, method: "delete" %>
-  <% end %>
-  <% if logged_in? && is_admin? %>
-  <%=link_to 'Add New Article', new_article_path %>
+  <%=link_to 'Login', new_user_session_path %>
   <% end %>
 </div>
 
