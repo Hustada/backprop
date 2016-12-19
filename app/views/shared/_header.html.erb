@@ -9,6 +9,7 @@
             <% else %>
             <%=link_to "Join", new_user_registration_path, :class => "button main-button" %>
             <%=link_to "Login", new_user_session_path, :class => "button main-button" %>
+            <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "button main-button" %>
             <% end %>
             <div class="centering">
 			        <a href="#">
