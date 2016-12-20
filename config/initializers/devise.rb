@@ -249,13 +249,19 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
+  if Rails.env.production?
+    config.omniauth :facebook, ENV["facebook_live_app_id"], ENV["facebook_live_app_secret"],
+    scope: 'email', info_fields: 'email,name'
 
-  config.omniauth :facebook, ENV["facebook_app_id"], ENV["facebook_app_secret"],
-  scope: 'email', info_fields: 'email,name'
+    config.omniauth :google_oauth2, ENV["google_live_app_id"], ENV["google_live_app_secret"],
+    scope: 'email'
+  elsif Rails.env.development?
+    config.omniauth :facebook, ENV["facebook_app_id"], ENV["facebook_app_secret"],
+    scope: 'email', info_fields: 'email,name'
 
-  config.omniauth :google_oauth2, ENV["google_app_id"], ENV["google_app_secret"],
-  scope: 'email'
-
+    config.omniauth :google_oauth2, ENV["google_app_id"], ENV["google_app_secret"],
+    scope: 'email'
+  end
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
