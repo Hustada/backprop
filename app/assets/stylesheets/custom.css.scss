@@ -90,8 +90,8 @@ iframe {
 /* header */
 
 .header-1 {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('milit.jpeg');
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('milit.jpeg');
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('weirdbrick.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('weirdbrick.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -414,6 +414,7 @@ img.article-show-image {
 
 .social-button-google img {
   height: 50px;
+  margin-top: 10px;
 }
 
 .social-button-facebook img {
