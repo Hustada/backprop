@@ -40,6 +40,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    amazon-ecs (2.5.0)
+      nokogiri (~> 1.4)
+      ruby-hmac (~> 0.3)
     arel (7.1.1)
     auto_html (2.0.0)
       gemoji (~> 2.1)
@@ -186,6 +189,8 @@ GEM
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rinku (1.7.3)
+    rmagick (2.16.0)
+    ruby-hmac (0.4.0)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -228,6 +233,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amazon-ecs
   auto_html
   bcrypt (~> 3.1.7)
   byebug
@@ -246,6 +252,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.0)
+  rmagick
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
