@@ -20,6 +20,8 @@ gem 'auto_html'
 gem 'devise'
 gem 'figaro'
 gem 'amazon-ecs'
+gem 'rmagick'
+
 # For sign in with google
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'omniauth-twitter'
