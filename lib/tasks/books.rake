@@ -11,6 +11,6 @@ namespace :amazonbooksimport do
 	end
 
 	def asins
-		%w(0670033847 0670882178 0465059996 0393239357)
+		%w(B00F4DZXU0)
 	end
 end

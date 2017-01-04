@@ -1,2 +1,23 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<div class="container">
+	<body>
+		<section class="books-section js--books-section">
+			<% @books.each do |book| %>
+			<ul class="book-list js--book-list">
+				<li>
+					<div class="row">
+						<div class="six columns book-content"><%=image_tag book.image_url %></div>
+						<div class="six columns book-content"><h6><%= book.title %></h6>
+							<p><%= book.author %></p>
+							<p><%= book.published_at %></p>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<% end %>
+			<%= will_paginate @books %>
+		</section>
+	</body>
+</div>
+
+
+
