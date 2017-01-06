@@ -1,20 +1,4 @@
 Rails.application.routes.draw do
-  get 'workouts/new'
-
-  get 'workouts/create'
-
-  get 'workouts/update'
-
-  get 'workouts/edit'
-
-  get 'workouts/destroy'
-
-  get 'workouts/index'
-
-  get 'workouts/show'
-
-  get 'books/index'
-
   devise_for :users, controllers: { omniauth_callbacks: "callbacks" }
 	root 'articles#index'
 
@@ -24,7 +8,9 @@ Rails.application.routes.draw do
 
 	resources :articles
 
-	resources :workouts
+	resources :workouts do
+		resources :exercises
+	end
 
 	resources :books, :only => :index
 end

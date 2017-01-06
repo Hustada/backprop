@@ -1,2 +1,14 @@
-<h1>Workouts#show</h1>
-<p>Find me in app/views/workouts/show.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="twelve columns workout-headers">
+			<h2><%= @workout.bodypart %></h2>
+			<h3><%= @workout.length %></h3>
+			<p><%= @workout.date.strftime("%h %d") %></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="twelve columns">
+			<%= render 'exercises/form' %>
+		</div>
+	</div>
+</div>

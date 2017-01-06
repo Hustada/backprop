@@ -27,12 +27,13 @@ class WorkoutsController < ApplicationController
   end
 
   def show
+    @workout = Workout.find(params[:id])
   end
 
   private
 
   def workout_params
-    params.require(:workout).permit(:bodypart, :date, :length)
+    params.require(:workout).permit(:bodypart, :date, :length, :user_id)
   end
 
 end
