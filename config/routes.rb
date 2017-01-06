@@ -24,5 +24,7 @@ Rails.application.routes.draw do
 
 	resources :articles
 
+	resources :workouts
+
 	resources :books, :only => :index
 end

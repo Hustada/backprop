@@ -1,0 +1,24 @@
+   <%= form_for @workout, html: { multipart: true } do |f| %>
+	  <% if @workout.errors.any? %>
+	    <div id="errors"
+	      <h2><%= pluralize(@workout.errors.count, "error") %> prevented this article from being saved</h2>
+	      <ul>
+		    <% @workout.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		      <% end %>
+	     </ul>
+	    </div>
+	<% end %>
+	
+		<%= f.label :bodypart %>
+		<%= f.text_field :bodypart, class: 'u-full-width' %>
+
+		<%= f.label :date %>
+		<%= f.date_select :date, class: 'u-full-width' %>
+
+		<%= f.label :length %>
+		<%= f.text_field :length, class: 'u-full-width' %>
+	
+		<p><%=	f.submit %></p>
+
+	<% end %>

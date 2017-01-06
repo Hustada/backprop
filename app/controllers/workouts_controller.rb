@@ -1,8 +1,17 @@
 class WorkoutsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
+    @workout = Workout.new
   end
 
   def create
+      @workout = current_user.workouts.new(workout_params)
+      if @workout.save
+        redirect_to @workout
+      else
+        flash[:notice] = "Something went wrong, workout not created"
+      end
   end
 
   def update
@@ -19,4 +28,11 @@ class WorkoutsController < ApplicationController
 
   def show
   end
+
+  private
+
+  def workout_params
+    params.require(:workout).permit(:bodypart, :date, :length)
+  end
+
 end
