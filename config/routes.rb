@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: { omniauth_callbacks: "callbacks" }
 	root 'articles#index'
 
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
 	resources :workouts do
 		resources :exercises
 	end
+	
+	resources :weights
 
 	resources :books, :only => :index
 end

@@ -21,7 +21,7 @@ gem 'devise'
 gem 'figaro'
 gem 'amazon-ecs'
 gem 'rmagick'
-
+gem 'simple_form'
 # For sign in with google
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'omniauth-twitter'

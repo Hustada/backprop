@@ -1,0 +1,7 @@
+<%= form_for ([@workout, @exercise]) do |e| %>
+	<%= e.fields_for :weights, Weight.new do |w| %>
+		<%= w.label :amount %>
+		<%= w.number_field :amount %>
+		<%= w.submit %>
+	<% end %>	
+<% end %>
