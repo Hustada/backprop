@@ -1,8 +1,10 @@
 class ExercisesController < ApplicationController
   before_action :authenticate_user!
+  # before_action :set_exercise, except: [:index, :new, :create]
 
   def new
     @exercise = Exercise.new
+    @exercise.weights.new
   end
 
   def index
@@ -20,6 +22,15 @@ class ExercisesController < ApplicationController
   def edit
   end
 
+  def update
+    @exercise = Exercise.find(params[:id])
+    if @exercise.update_attributes(exercise_params)
+      redirect_to workout_exercise_path(@exercise)
+    else
+      flash[:notice] = "Some stupid shit just happened"
+    end
+  end
+
   def show
     @workout = Workout.find(params[:workout_id])
     @exercise = @workout.exercises.find(params[:id])
@@ -31,7 +42,11 @@ class ExercisesController < ApplicationController
 
   private
 
+  def set_exercise
+    @exercise = Exercise.find(params[:id])
+  end
+  
   def exercise_params
-    params.require(:exercise).permit(:name, :workout_id)
+    params.require(:exercise).permit(:name, :workout_id, :weights_attributes => [:amount, :reps])
   end
 end

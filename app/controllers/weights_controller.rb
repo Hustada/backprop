@@ -9,7 +9,7 @@ class WeightsController < ApplicationController
     @exercise = Exercise.find(params[:exercise_id])
     @weight = @exercise.weights.new(weight_params)
     @weight.save!
-    redirect_to workout_exercise_path(@exercise)
+    redirect_to exercise_weight_path(@weight)
   end
 
   def edit
