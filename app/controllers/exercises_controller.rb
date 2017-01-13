@@ -25,7 +25,6 @@ class ExercisesController < ApplicationController
   def update
     @exercise = Exercise.find(params[:id])
     if @exercise.update_attributes(exercise_params)
-      binding.pry
       redirect_to exercise_path(@exercise)
     else
       flash[:notice] = "Some stupid shit just happened"
