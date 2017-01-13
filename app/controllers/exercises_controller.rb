@@ -25,15 +25,16 @@ class ExercisesController < ApplicationController
   def update
     @exercise = Exercise.find(params[:id])
     if @exercise.update_attributes(exercise_params)
-      redirect_to workout_exercise_path(@exercise)
+      binding.pry
+      redirect_to exercise_path(@exercise)
     else
       flash[:notice] = "Some stupid shit just happened"
     end
   end
 
   def show
-    @workout = Workout.find(params[:workout_id])
-    @exercise = @workout.exercises.find(params[:id])
+    @exercise = Exercise.find(params[:id])
+    @weights = @exercise.weights
   end
 
   def destroy
@@ -47,6 +48,6 @@ class ExercisesController < ApplicationController
   end
   
   def exercise_params
-    params.require(:exercise).permit(:name, :workout_id, :weights_attributes => [:amount, :reps])
+    params.require(:exercise).permit(:name, :weights_attributes => [:amount, :reps])
   end
 end

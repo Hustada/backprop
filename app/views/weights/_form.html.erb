@@ -2,6 +2,9 @@
 	<%= e.fields_for :weights, Weight.new do |w| %>
 		<%= w.label :amount %>
 		<%= w.number_field :amount %>
-		<%= w.submit %>
+		<%= w.label :reps %>
+		<%= w.number_field :reps %>
+		<br>
+		<%= w.submit "Create Set" %>
 	<% end %>	
 <% end %>

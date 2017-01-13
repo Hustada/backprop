@@ -24,6 +24,7 @@ class WorkoutsController < ApplicationController
   end
 
   def index
+    @workouts = current_user.workouts
   end
 
   def show

@@ -5,7 +5,27 @@
 		<div class="twelve columns"</div>
 		<%= render 'weights/form' %>
 	</div>
+	<div class="row">
+		<div class="twelve columns">
+			<% @weights.each do |w| %>
+			<div class="row">
+			<ul class="weight-list">
+				<li>
+					<div class="six columns">Pounds:<%= w.amount %></div>	
+				</li>
+				<li>
+					<div class="six columns">Reps:<%= w.reps %></div>	
+				</li>
+			</ul>
+			<% end %>
+			</div>
+		</div>
+	</div>
 </div>
+
+
+
+
 
 
 

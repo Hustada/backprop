@@ -9,11 +9,9 @@ Rails.application.routes.draw do
 
 	resources :articles
 
-	resources :workouts do
-		resources :exercises
-	end
+	resources :workouts
 	
-	resources :weights
-
+	resources :exercises
+		
 	resources :books, :only => :index
 end
