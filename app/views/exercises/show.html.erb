@@ -13,7 +13,7 @@
 
 
 
-<h2><%= @exercise.name %></h2>
+<h2><%= @exercise.name.capitalize %></h2>
 
 <% if @weights.any? %>
 	<% @weights.each do |w| %>

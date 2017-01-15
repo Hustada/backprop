@@ -11,8 +11,8 @@ class WorkoutsController < ApplicationController
         redirect_to @workout
         flash[:notice] = "Workout created, add an exercise"
       else
-        flash[:notice] = "Something went wrong, workout not created"
-        render new
+        render new_workout_path
+        flash[:notice] = "#{@workout.errors.full_messages.to_sentence}"
       end
   end
 

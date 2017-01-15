@@ -8,11 +8,12 @@ class WeightsController < ApplicationController
   def create
       @exercise = Exercise.find(params[:exercise_id])
       @weight = @exercise.weights.build(weight_params)
-    if @weight.save!
+    if @weight.save
       flash[:notice] = "Set saved"
       redirect_to exercise_path(@exercise)
     else
-      render new
+      redirect_to exercise_path(@exercise)
+      flash[:notice] = "#{@weight.errors.full_messages.to_sentence}"
     end
   end
 

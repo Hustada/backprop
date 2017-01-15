@@ -15,10 +15,12 @@ class ExercisesController < ApplicationController
   def create
     @workout = Workout.find(params[:workout_id])
     @exercise = @workout.exercises.build(exercise_params)
-      if @exercise.save!
+      if @exercise.save
+        redirect_to workout_exercise_path(@workout, @exercise)
         flash[:notice] = "Exercise created, enter weight and reps for your first set"
-      redirect_to workout_exercise_path(@workout, @exercise)
-    else render new
+      else 
+        redirect_to @workout
+        flash[:notice] = "#{@exercise.errors.full_messages.to_sentence}"
     end
   end
 

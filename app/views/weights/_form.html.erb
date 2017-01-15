@@ -9,14 +9,18 @@
 	     </ul>
 	    </div>
 	<% end %>
- <div class="centering">
- 	<%= f.label :amount %>
- 	<%= f.text_field :amount, placeholder: "Weight attempted" %>
- 	<%= f.label :reps %>
- 	<%= f.text_field :reps, placeholder: "Rep amount" %>
-<br>
- 	<%= f.submit "Create set" %>
- </div>
+
+
+ <div class="Rtable Rtable--4cols Rtable--collapse">
+
+  <div class="Rtable-cell Rtable-cell--head weight-field"><h3>Enter Set</h3></div>
+  <div class="Rtable-cell weight-field"><%= f.text_field :amount, placeholder: "Weight attempted", class: "weight-field" %></div>
+  <div class="Rtable-cell weight-field"><%= f.text_field :reps, placeholder: "Rep amount", class: "weight-field" %></div>
+  <div class="Rtable-cell Rtable-cell weight-field"><strong><%= f.submit "Create set" , class: "weight-field" %></strong></div>
+
+
+
+</div>
  	
  
 
