@@ -9,8 +9,10 @@ class WorkoutsController < ApplicationController
       @workout = current_user.workouts.new(workout_params)
       if @workout.save
         redirect_to @workout
+        flash[:notice] = "Workout created, add an exercise"
       else
         flash[:notice] = "Something went wrong, workout not created"
+        render new
       end
   end
 

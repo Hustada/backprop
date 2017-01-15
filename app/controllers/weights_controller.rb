@@ -6,10 +6,14 @@ class WeightsController < ApplicationController
   end
 
   def create
-    @exercise = Exercise.find(params[:exercise_id])
-    @weight = @exercise.weights.build(weight_params)
-    @weight.save!
-    redirect_to exercise_path(@exercise)
+      @exercise = Exercise.find(params[:exercise_id])
+      @weight = @exercise.weights.build(weight_params)
+    if @weight.save!
+      flash[:notice] = "Set saved"
+      redirect_to exercise_path(@exercise)
+    else
+      render new
+    end
   end
 
   def edit

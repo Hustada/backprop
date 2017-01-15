@@ -9,11 +9,12 @@
 	     </ul>
 	    </div>
 	<% end %>
- 
- 	<%= f.label :name %>
- 	<%= f.text_field :name %>
+ <div class="centering">
+ 	<%= f.label :name, "Create an exercise" %>
+ 	<%= f.text_field :name, :placeholder => "squat, dips, bench, etc.." %>
 
- 	<p><%= f.submit %></p>
+ 	<%= f.submit %>
+</div> 	
  	
  
 

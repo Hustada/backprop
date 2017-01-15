@@ -21,7 +21,11 @@
 	  <div style="order:1;" class="Rtable-cell">Pounds: <%= w.amount %></div>
 	  <div style="order:1;" class="Rtable-cell">Reps: <%= w.reps %></div>
 	</div>
+
 	<% end %>
+	<div class="centering">
+	<%= will_paginate @weights %>
+	</div>
 	<% end %>
 	</div>
 

@@ -15,8 +15,11 @@ class ExercisesController < ApplicationController
   def create
     @workout = Workout.find(params[:workout_id])
     @exercise = @workout.exercises.build(exercise_params)
-    @exercise.save!
-    redirect_to workout_exercise_path(@workout, @exercise)
+      if @exercise.save!
+        flash[:notice] = "Exercise created, enter weight and reps for your first set"
+      redirect_to workout_exercise_path(@workout, @exercise)
+    else render new
+    end
   end
 
   def edit
@@ -34,7 +37,7 @@ class ExercisesController < ApplicationController
   def show
     @exercise = Exercise.find(params[:id])
     #just going to put this here(make sure to ORDER your collection otherwise phantom divs can appear)
-    @weights = @exercise.weights.order('created_at DESC')
+    @weights = @exercise.weights.order('created_at DESC').paginate(page: params[:page], per_page: 5)
   end
 
   def destroy
