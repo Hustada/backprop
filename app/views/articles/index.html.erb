@@ -10,6 +10,7 @@
   <a href="#">Videos</a>
   <a href="#">Articles</a>
   <% if user_signed_in? %>
+  <%=link_to 'Start a workout', new_workout_path %>
   <%=link_to 'logout', destroy_user_session_path, method: "delete" %>
   <% else %>
   <%=link_to 'Login', new_user_session_path %>

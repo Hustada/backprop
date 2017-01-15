@@ -42,10 +42,7 @@ class ExercisesController < ApplicationController
 
   private
 
-  def set_exercise
-    @exercise = Exercise.find(params[:id])
-  end
-  
+ 
   def exercise_params
     params.require(:exercise).permit(:name, :weights_attributes => [:amount, :reps])
   end
