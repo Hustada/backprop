@@ -23,8 +23,8 @@ gem 'amazon-ecs'
 gem 'rmagick'
 gem 'simple_form'
 gem 'pry'
-gem 'byebug'
 gem 'pry-byebug'
+
 # For sign in with google
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'omniauth-twitter'

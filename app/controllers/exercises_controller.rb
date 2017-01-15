@@ -33,7 +33,8 @@ class ExercisesController < ApplicationController
 
   def show
     @exercise = Exercise.find(params[:id])
-    @weights = @exercise.weights
+    #just going to put this here(make sure to ORDER your collection otherwise phantom divs can appear)
+    @weights = @exercise.weights.order('created_at DESC')
   end
 
   def destroy

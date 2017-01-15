@@ -1,33 +1,29 @@
 
 <div class="container">
-<h2><%= @exercise.name %></h2>
+
 	<div class="row">
 		<div class="twelve columns"</div>
 		<%= render 'weights/form' %>
 	</div>
 	<div class="row">
 		<div class="twelve columns">
-			
-			<div class="row">
-			<% @weights.each do |w| %>
-			<ul class="weight-list">
-				<li>
-					<div class="six columns">Pounds:<%= w.amount %></div>	
-				</li>
-				<li>
-					<div class="six columns">Reps:<%= w.reps %></div>	
-				</li>
-			</ul>
-			<% end %>
-			</div>
+		
 		</div>
 	</div>
-</div>
 
 
 
+<h2><%= @exercise.name %></h2>
 
-
+<% if @weights.any? %>
+	<% @weights.each do |w| %>
+	<div class="Rtable Rtable--2cols Rtable--collapse">
+	  <div style="order:1;" class="Rtable-cell">Pounds: <%= w.amount %></div>
+	  <div style="order:1;" class="Rtable-cell">Reps: <%= w.reps %></div>
+	</div>
+	<% end %>
+	<% end %>
+	</div>
 
 
 
