@@ -31,12 +31,37 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find(params[:id])
+    @exercises = @workout.exercises
+  end
+
+  def is_finished
+    @workout = Workout.find(params[:id])
+    @workout.finished = true
+    if @workout.save
+      redirect_to workout_path(@workout)
+      flash[:notice] = "Workout Finished!"
+    else
+      redirect_to workout_path(@workout)
+      flash[:notice] = "Couldn't finish workout"
+    end
+  end
+
+  def unfinish
+    @workout = Workout.find(params[:id])
+    @workout.finished = false
+    if @workout.save
+      redirect_to workout_path(@workout)
+      flash[:notice] = "Workout unfinished"
+    else
+      redirect_to workout_path(@workout)
+      flash[:notice] = "Couldn't unfinish workout"
+    end
   end
 
   private
 
   def workout_params
-    params.require(:workout).permit(:bodypart, :date, :length, :user_id, :exercise_attributes => [:name])
+    params.require(:workout).permit(:bodypart, :date, :length, :user_id, :finished, :exercise_attributes => [:name])
   end
 
 end

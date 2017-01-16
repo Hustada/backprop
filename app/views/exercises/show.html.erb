@@ -1,6 +1,7 @@
 
-<div class="container">
 
+<div class="container">
+<h2><%= @exercise.name.capitalize %></h2>
 	<div class="row">
 		<div class="twelve columns"</div>
 		<%= render 'weights/form' %>
@@ -11,22 +12,18 @@
 		</div>
 	</div>
 
+	<% if @weights.any? %>
+		<% @weights.each do |w| %>
+		<div class="Rtable Rtable--2cols Rtable--collapse">
+		  <div style="order:1;" class="Rtable-cell weight-field">Pounds: <%= w.amount %></div>
+		  <div style="order:1;" class="Rtable-cell weight-field">Reps: <%= w.reps %></div>
+		</div>
 
-
-<h2><%= @exercise.name.capitalize %></h2>
-
-<% if @weights.any? %>
-	<% @weights.each do |w| %>
-	<div class="Rtable Rtable--2cols Rtable--collapse">
-	  <div style="order:1;" class="Rtable-cell">Pounds: <%= w.amount %></div>
-	  <div style="order:1;" class="Rtable-cell">Reps: <%= w.reps %></div>
-	</div>
-
-	<% end %>
-	<div class="centering">
-	<%= will_paginate @weights %>
-	</div>
-	<% end %>
+		<% end %>
+		<div class="centering">
+		<%= will_paginate @weights %>
+		</div>
+		<% end %>
 	</div>
 
 
