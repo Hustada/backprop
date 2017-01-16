@@ -31,7 +31,7 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find(params[:id])
-    @exercises = @workout.exercises
+    @exercises = @workout.exercises.order('created_at DESC')
   end
 
   def is_finished
@@ -39,7 +39,7 @@ class WorkoutsController < ApplicationController
     @workout.finished = true
     if @workout.save
       redirect_to workout_path(@workout)
-      flash[:notice] = "Workout Finished!"
+      flash[:notice] = "Workout Completed!"
     else
       redirect_to workout_path(@workout)
       flash[:notice] = "Couldn't finish workout"

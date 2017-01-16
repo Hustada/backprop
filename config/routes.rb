@@ -24,5 +24,12 @@ Rails.application.routes.draw do
 		end
 	end
 
+	resources :exercises do
+		member do
+			put :is_finished
+			put :unfinish
+		end
+	end
+
 	resources :books, :only => :index
 end

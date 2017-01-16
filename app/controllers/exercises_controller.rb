@@ -45,11 +45,35 @@ class ExercisesController < ApplicationController
   def destroy
   end
 
+  def is_finished
+    @exercise = Exercise.find(params[:id])
+    @exercise.finished = true
+    if @exercise.save
+      redirect_to exercise_path(@exercise)
+      flash[:notice] = "Exercise Finished!"
+    else
+      redirect_to exercise_exercise(@exercise)
+      flash[:notice] = "Couldn't finish workout"
+    end
+  end
+
+  def unfinish
+    @exercise = Exercise.find(params[:id])
+    @exercise.finished = false
+    if @exercise.save
+      redirect_to exercise_path(@exercise)
+      flash[:notice] = "Workout unfinished"
+    else
+      redirect_to exercise_path(@wexercise)
+      flash[:notice] = "Couldn't unfinish workout"
+    end
+  end
+
 
   private
 
  
   def exercise_params
-    params.require(:exercise).permit(:name, :weights_attributes => [:amount, :reps])
+    params.require(:exercise).permit(:name, :finished, :weights_attributes => [:amount, :reps])
   end
 end

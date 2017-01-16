@@ -1,3 +1,5 @@
+
+<section class="section-workout-show js--workout-show">
 <div class="container">
 	<div class="row">
 		<div class="twelve columns workout-headers">
@@ -11,6 +13,22 @@
 		</div>
 	</div>
 </div>
-<% @exercises.each do |f| %>
-	<%= f.name %>
-<% end %>
+</section>
+
+	<div class="row">
+	<section class="section-exercise-list js-section-exercise-list">
+		<div class="centering">
+		<h3>Current Exercises for this workout</h3>
+		<% @exercises.each do |f| %>
+		<ul class="exercise-show-list">
+			<li class="exercise-show-list-item js--exercise-show-list-item"><%=link_to "#{f.name}", :controller => :exercises, :action => :show %></li>
+		</ul>	
+		<% end %>
+		<ul class="complete-workout-list js--complete-workout-list">
+			<li><%=link_to 'Complete workout', is_finished_workout_path(@workout), :method => :put %></li>
+			<li><%=link_to 'Not done yet?(unfinish workout)', unfinish_workout_path(@workout), :method => :put %></li>
+    </ul>
+		</div>
+	</section>
+</div>
+

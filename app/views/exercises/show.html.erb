@@ -1,32 +1,29 @@
-
-
-<div class="container">
-<h2><%= @exercise.name.capitalize %></h2>
-	<div class="row">
-		<div class="twelve columns"</div>
-		<%= render 'weights/form' %>
-	</div>
-	<div class="row">
-		<div class="twelve columns">
-		
+<section class="section-weights">
+	<div class="container">
+		<div class="row">
+		<h2 class="current-exercise-title">Current Exercise</h2>
+			<h3><%= @exercise.name.capitalize %></h3>
+			<%= render 'weights/form' %>
 		</div>
-	</div>
-
-	<% if @weights.any? %>
-		<% @weights.each do |w| %>
-		<div class="Rtable Rtable--2cols Rtable--collapse">
-		  <div style="order:1;" class="Rtable-cell weight-field">Pounds: <%= w.amount %></div>
-		  <div style="order:1;" class="Rtable-cell weight-field">Reps: <%= w.reps %></div>
+		<div class="row">
+		<h3>Sets</h3>
+			<% if @weights.any? %>
+			<% @weights.each do |w| %>
+				<div class="Rtable Rtable--2cols Rtable--collapse">
+		  		<div style="order:1;" class="Rtable-cell weight-field">Pounds: <%= w.amount %></div>
+		  		<div style="order:1;" class="Rtable-cell weight-field">Reps: <%= w.reps %></div>
+				</div>
+			<% end %>
+		<div class="centering">
+			<%= will_paginate @weights %>
 		</div>
-
 		<% end %>
 		<div class="centering">
-		<%= will_paginate @weights %>
+			<ul class="complete-exercise-list js--complete-exercise-list">
+				<li><%=link_to 'Complete exercise', is_finished_exercise_path(@exercise), :method => :put, :class => "button" %></li>
+				<li><%=link_to 'Not done yet?(edit exercise)', unfinish_exercise_path(@exercise), :method => :put, :class => "button" %></li>
+			</ul>	
 		</div>
-		<% end %>
+		</div>
 	</div>
-
-
-
-
-
+</section>
