@@ -254,13 +254,18 @@ Devise.setup do |config|
     scope: 'email', info_fields: 'email,name'
 
     config.omniauth :google_oauth2, ENV["google_live_app_id"], ENV["google_live_app_secret"],
-    scope: 'email'
+    { scope: 'email',
+      prompt: 'select_account',
+    }
+
   elsif Rails.env.development?
     config.omniauth :facebook, ENV["facebook_app_id"], ENV["facebook_app_secret"],
     scope: 'email', info_fields: 'email,name'
 
     config.omniauth :google_oauth2, ENV["google_app_id"], ENV["google_app_secret"],
-    scope: 'email'
+    { scope: 'email',
+      prompt: 'select_account',
+    }
   end
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

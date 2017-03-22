@@ -5,7 +5,8 @@ class CallbacksController < Devise::OmniauthCallbacksController
 		if @user.persisted?
 			flash[:notice] = "Signed in Successfully"
 			sign_in_and_redirect @user
-		else
+		elsif User.exists?
+			flash[:notice] = "User already exists"
 			redirect_to root_path
 		end
 	end
@@ -20,7 +21,8 @@ class CallbacksController < Devise::OmniauthCallbacksController
 		if @user.persisted?
 			flash[:notice] = "Signed in Successfully"
 			sign_in_and_redirect @user
-		else
+		elsif User.exists?
+			flash[:notice] = "User already exists"
 			redirect_to root_path
 		end
 	end
