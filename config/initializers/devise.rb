@@ -256,6 +256,7 @@ Devise.setup do |config|
     config.omniauth :google_oauth2, ENV["google_live_app_id"], ENV["google_live_app_secret"],
     { scope: 'email',
       prompt: 'select_account',
+      access_type: 'online'
     }
 
   elsif Rails.env.development?
@@ -265,6 +266,7 @@ Devise.setup do |config|
     config.omniauth :google_oauth2, ENV["google_app_id"], ENV["google_app_secret"],
     { scope: 'email',
       prompt: 'select_account',
+      access_type: 'online'
     }
   end
   # ==> Warden configuration
