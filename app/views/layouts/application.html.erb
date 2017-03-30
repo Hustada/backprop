@@ -5,17 +5,33 @@
      <%= stylesheet_link_tag    'application', media: 'all' %>
      <%= javascript_include_tag 'application' %>
      <%= csrf_meta_tags %>
+     <% flash.each do |message_type, message| %>
+  <center>
+    <div id="flash-message">
+      <a class="close" data-dismiss="alert">&#215;</a>
+      <%= message %>
+    </div>
+  </center>
+  <% end %>
   </head>
-  	<% flash.each do |message_type, message| %>
-  <center><div class="flash-message <%= message_type %>"><%= message %></div></center>
-	<% end %>
+  	
   <body>
 
     <%= yield %>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+    
     
     
   </body>
-  <%= render 'shared/footer' %>
+
+  <script type="text/javascript">
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#flash-message').slideUp();
+  }, 5000);
+ });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+
 </html>

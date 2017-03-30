@@ -24,6 +24,8 @@ gem 'rmagick'
 gem 'simple_form'
 gem 'pry'
 gem 'pry-byebug'
+gem 'bootstrap-sass'
+gem 'sprockets-rails'
 
 # For sign in with google
 gem "omniauth-google-oauth2", "~> 0.2.1"
