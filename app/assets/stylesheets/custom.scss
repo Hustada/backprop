@@ -1,3 +1,19 @@
+body, h2, h3, h4, h5, h6 {
+  font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  background-color: #000;
+  color: #fff;
+}
+
+.content-section {
+  padding-top: 250px;
+}
+
+.text-center {
+  text-align: center;
+  display: block;
+}
+
 .demo-body {
     padding-top: 50px;  /*Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes.*/ 
 }
@@ -23,4 +39,25 @@ footer {
   padding: 20px;
   background-color: #f39c12;
   color: #fff;
+}
+
+/*.navbar-custom {
+  background-color: #000;
+  padding: 20px;
+}*/
+
+.intro {
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('wanderer.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('wanderer.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.brand-box {
+  margin-top: 50%;
+  text-transform: uppercase;
+  font-family: "Montserrat";
 }
