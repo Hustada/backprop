@@ -4,6 +4,7 @@
     <title>Experimental</title>
      <%= stylesheet_link_tag    'application', media: 'all' %>
      <%= javascript_include_tag 'application' %>
+     <%= javascript_include_tag 'custom.js' %>
      <%= csrf_meta_tags %>
      <% flash.each do |message_type, message| %>
   <center>
@@ -24,14 +25,9 @@
     
   </body>
 
-  <script type="text/javascript">
-$(document).ready(function(){
-  setTimeout(function(){
-    $('#flash-message').slideUp();
-  }, 5000);
- });
-
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+
+
 
 </html>
