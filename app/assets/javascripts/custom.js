@@ -11,4 +11,14 @@ $(document).ready(function() {
 
     $(window).scroll(collapseNavbar);
     $(document).ready(collapseNavbar);
+
+    $(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500 );
+        event.preventDefault();
+    });
+});
 });
