@@ -1,6 +1,6 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="0">
   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-main-collapse">
         Menu
@@ -23,11 +23,22 @@
             <a class="page-scroll" href="#about">About</a>
           </li>
           <li>
-            <a class="page-scroll" href="#download">Download</a>
+            <a class="page-scroll" href="#article">Articles</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#recent">Recent</a>
           </li>
           <li>
             <a class="page-scroll" href="#contact">Contact</a>
           </li>
+          <% if user_signed_in? %>
+          <li>
+            <%=link_to 'logout', destroy_user_session_path, method: "delete" %>
+          </li>
+            <% else %>
+          <li><%=link_to "Join", new_user_registration_path %></li>
+          <li><%=link_to "Login", new_user_session_path %></li>
+          <% end %>
         </ul>
       </div>
       <!--navbar collapse -->
@@ -43,10 +54,10 @@
         <div class="row">
           <div class="brand-box">
             <div class="col-md-8 col-md-offset-2">
-              <h1 id="brand-heading">Backpropagate</h1>
-              <p class="intro-text">Make Your Dreams Come True</p>
+              <h1 class="brand-heading">Backpropagate</h1>
+              <p class="intro-text">Start Here</p>
               <a class="btn btn-circle page-scroll" href="#about">
-                <i class="fa fa-angle-double-down animated"></i>
+                <i class="fa fa-angle-double-down animated" id="nav-circle"></i>
               </a>
             </div>
           </div>
@@ -57,54 +68,76 @@
   <!-- end of header -->
 
 <!-- beginning of about section -->
-  <section id="about" class="container content-section text-center">
+  <section id="about" class="container content-section text-center light-section">
     <div class="row">
+    <h2>I'm getting serious about getting in shape. If you are too, enter your email and we can both learn together.</h2>
+    <p>
+      No spam, only great content!
+    </p>
       <form class="form-inline">
         <div class="form-group">
-          <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email">
+            <input type="email" class="form-control" id="email" value="Enter Your Email">
     </div>
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd">
-      </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
     </div>
   </section>
 
-  <section id="download" class="content-section text-center">
-        <div class="download-section">
+  <section id="article" class="content-section text-center lighter-section">
+        <div class="article-section ">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+                    <h2><%= @recent_article.title  %></h2>
+                    <p>
+                      <%= @recent_article.body %>
+                    </p>
+                    <%=link_to "Read More", article_path(@recent_article), class: "btn btn-default" %>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+  <section id="recent" class="content-section text-center">
+    <div class="article-section dark-section">
+    <h1>Recent Articles</h1>
+      <div class="container-fluid">
+      <br>
+    <div class="row">
+        <!-- item -->
+        <% @popular_articles.each do | article | %>
+          <div class="col-xs-6 col-sm-3">
+              <div class="thumbnail">
+                  <div class="img-wrapper">
+                      <%= image_tag article.header.url %>
+                  </div>
+              </div>
+          </div>
+          <% end %>
+      </div>
+  </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container content-section text-center light-section">
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+              <h2>Contact Me</h2>
+              <p>Any Comments, Questions, or Feedback?</p>
+              <p><a href="mailto:feedback@startbootstrap.com">mark.hustad@backpropagate.com</a>
+              </p>
+              <ul class="list-inline banner-social-buttons">
+                  <li>
+                      <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                  </li>
+                  <li>
+                      <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                  </li>
+                  <li>
+                      <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </section>
 </body>
 

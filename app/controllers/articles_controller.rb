@@ -19,7 +19,10 @@ class ArticlesController < ApplicationController
 	end
 
 	def index
-		@articles = Article.all.order('created_at DESC').paginate(page: params[:page],per_page: 4)
+		@user = current_user
+		@articles = Article.all.order('created_at DESC').paginate(page: params[:page],per_page: 1)
+		@popular_articles = Article.all.order('created_at DESC').paginate(page: params[:page],per_page: 4)
+		@recent_article = Article.order("created_at").last
 	end
 
 	def edit
