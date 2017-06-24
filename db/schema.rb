@@ -33,14 +33,6 @@ ActiveRecord::Schema.define(version: 20170116055707) do
     t.index ["article_id"], name: "index_articles_on_article_id", using: :btree
   end
 
-  create_table "authentications", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.string   "author"
