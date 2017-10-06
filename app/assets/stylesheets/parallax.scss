@@ -1,3 +1,6 @@
+/* make sure images are around 1200ish X 1200ish for proper sizing, give or take */
+
+
 #intro { 
     background: 50% 0 fixed;
     height: 100%;  
@@ -5,8 +8,8 @@
     width: 100%;
     text-align: center;
     color: #fff;
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('blackandwhiteabs.jpg');
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('blackandwhiteabs.jpg');
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('creepylight.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('creepylight.jpg');
     background-position: center;
 }
 /*#about { 
@@ -19,12 +22,11 @@
 }*/
 #article { 
   background: 50% 0 fixed;
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('darkgraywall.jpg');
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('darkgraywall.jpg');
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), image-url('blackandwhitecoding.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), image-url('blackandwhitecoding.jpg');
   height: auto;
   margin: 0 auto; 
   width: 100%;
   box-shadow: 0 0 50px rgba(0,0,0,0.8);
-  padding: 100px 0
 }
 
