@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116055707) do
+ActiveRecord::Schema.define(version: 20171007210509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170116055707) do
     t.integer  "header_file_size"
     t.datetime "header_updated_at"
     t.string   "video_url"
+    t.integer  "user_id"
     t.index ["article_id"], name: "index_articles_on_article_id", using: :btree
   end
 
