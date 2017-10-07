@@ -8,6 +8,10 @@
   background-color: green;
 }
 
+.dark-section-background {
+  background-color: #222;
+}
+
 
 
 html {
@@ -64,7 +68,7 @@ p {
   }
 }
 a {
-  color: #42DCA3;
+  color: #999;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -72,7 +76,11 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #1d9b6c;
+  color: #fff;
+}
+
+.center-title {
+  text-align: center;
 }
 
 .content-section {
@@ -84,6 +92,11 @@ a:focus {
 .text-center {
   text-align: center;
   display: block;
+}
+
+.article-paragraph {
+  font-family: 'Open Sans', sans-serif;
+  color: #999;
 }
 
 .demo-body {
@@ -252,4 +265,5 @@ footer {
 }
 
 /* Recent Article Section */
+
 

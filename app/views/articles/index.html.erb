@@ -87,8 +87,8 @@
         <div class="article-section ">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2><%= @recent_article.title  %></h2>
-                    <p>
+                    <h2 class="center-title"><%= @recent_article.title  %></h2>
+                    <p class="article-paragraph">
                       <%= @recent_article.body %>
                     </p>
                     <%=link_to "Read More", article_path(@recent_article), class: "btn btn-default" %>
@@ -97,7 +97,7 @@
         </div>
     </section>
 
-  <section id="recent" class="content-section text-center">
+  <section id="recent" class="dark-section-background content-section text-center">
     <div class="article-section dark-section">
     <h1>Recent Articles</h1>
       <div class="container-fluid">
