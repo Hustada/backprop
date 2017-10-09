@@ -1,6 +1,6 @@
 <header>
 <div class="container">
-	<h1 class="article-title js--article-title"><%= @article.title %></h1>
+	<h1 class="article-title js--article-title"><%= @article.title.upcase %></h1>
 		<i><%=@article.user.username %> -- <%= @article.created_at.strftime("%h %d %y") %></i>
 </div>
 	<br>

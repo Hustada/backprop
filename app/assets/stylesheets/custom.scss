@@ -43,13 +43,13 @@ body {
 
 
 h2, h3, h4, h5, h6 {
-  font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   color: #fff;
 }
 
 h1 {
-  font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
 }
 
@@ -93,7 +93,7 @@ a:focus {
 }
 
 .article-paragraph {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: #999;
 }
 
@@ -142,6 +142,10 @@ footer {
   margin-top: 25%;
   text-transform: uppercase;
   font-family: "Montserrat";
+}
+
+.brand-heading {
+  font-family: 'Ubuntu Mono', sans-serif;
 }
 
 
