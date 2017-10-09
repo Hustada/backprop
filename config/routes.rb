@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { omniauth_callbacks: "callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "callbacks", registrations: 'registrations' }
 
   devise_scope :user do
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
   end
-  
+
 	root 'articles#index'
 
 	get '/demo', to: 'static_pages#demo'
