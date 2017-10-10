@@ -94,12 +94,7 @@
                     </p>
                     <%=link_to "Read More", article_path(@recent_article), class: "btn btn-default" %>
                     <% else %>
-                    <h2>Dummy Title</h2>
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla malesuada eleifend. Donec maximus convallis efficitur. Nunc accumsan ipsum quis turpis euismod, sed porta justo lobortis. Curabitur pharetra nisi vitae blandit scelerisque. Maecenas pretium libero eget velit blandit accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at risus sit amet velit vestibulum dictum. Aenean quis placerat ipsum. Aliquam imperdiet velit vel justo mattis gravida. Pellentesque eleifend metus odio. Praesent tristique nisl et elit varius, vitae aliquam nisi tempus.
-
-                    Quisque vulputate nibh a posuere ullamcorper. Donec ut arcu et nibh condimentum accumsan sit amet nec ante. Nulla facilisi. Sed congue porttitor elementum. Phasellus et urna mollis, gravida nunc ac, rutrum sem. Donec accumsan, enim at ornare gravida, lacus purus tristique lectus, accumsan ornare ante purus eget nisi. Suspendisse at diam volutpat, gravida nibh id, lobortis felis. Nullam cursus sodales varius. Nullam vulputate sollicitudin semper. Sed euismod, ante non posuere sodales, augue risus dignissim dui, ut ultrices justo purus quis arcu. Suspendisse a metus malesuada eros dapibus tempus a in ex. Praesent dictum nunc eu eros rutrum auctor. Maecenas tempus nisi nec tellus lacinia, eget bibendum ligula lobortis.
-                  </p>
+                    <%= render 'shared/dummy-article' %>
                   <% end %>
                 </div>
             </div>
@@ -117,7 +112,7 @@
           <div class="col-xs-6 col-sm-3">
               <div class="thumbnail">
                   <div class="img-wrapper">
-                      <%= image_tag article.header.url %>
+                      <%=link_to (image_tag(article.header.url)), article %>
                   </div>
               </div>
           </div>

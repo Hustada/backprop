@@ -4,7 +4,7 @@
 		<i><%=@article.user.username %> -- <%= @article.created_at.strftime("%h %d %y") %></i>
 </div>
 	<br>
-<% if @article.header.present? %>
+<% if @article.header.present? && !@article.video_url %>
 	<%= image_tag @article.header.url, class: "article-show-image" %>
 <% end %>
 </header>
