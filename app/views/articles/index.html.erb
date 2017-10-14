@@ -69,17 +69,19 @@
 
 <!-- beginning of about section -->
   <section id="about" data-speed="4" data-type="background" class="container content-section text-center light-section">
-    <div class="row">
-    <h2>I'm getting serious about getting serious and stuff. I will spam you as much as possible!</h2>
-    <p>
-      No spam, only great content!
-    </p>
-      <form class="form-inline">
-        <div class="form-group">
-            <input type="email" class="form-control" id="email" value="Enter Your Email">
-    </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+    <div class="container">
+      <div class="row">
+        <h2>I'm getting serious about getting serious and stuff. I will spam you as much as possible!</h2>
+          <p>
+            No spam, only great content!
+          </p>
+        <form class="form-inline">
+          <div class="form-group">
+              <input type="email" class="form-control" id="email" value="Enter Your Email">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -101,25 +103,32 @@
         </div>
     </section>
 
-  <section id="recent" class="dark-section-background content-section text-center">
-    <div class="article-section dark-section">
-    <h1>Recent Articles</h1>
-      <div class="container-fluid">
-      <br>
-    <div class="row">
-        <!-- item -->
-        <% @popular_articles.each do | article | %>
-          <div class="col-xs-6 col-sm-3">
-              <div class="thumbnail">
-                  <div class="img-wrapper">
-                      <%=link_to (image_tag(article.header.url)), article %>
+  
+  <section id="recent" data-speed="2" data-type="background" class="dark-section-background content-section">
+    <div class="container">
+      <div class="row">
+
+
+        <% @popular_articles.each do |article| %>
+                <div class="col-md-4">
+                  <div class="card card-inverse">
+                    <%= image_tag(article.header.url, class: "card-img img-responsive") %>
+                    <div class="card-img-overlay">
+                      <h4 class="card-title"><%=link_to "#{article.title}", article %></h4>
+                      <p class="card-text"><%= truncate(article.body) %></p>
+                      <p class="card-text"><small class="text-muted">posted <%= time_ago_in_words(article.created_at) %> ago</small></p>
+                    </div>
                   </div>
-              </div>
-          </div>
-          <% end %>
+                </div>
+        <% end %>
+
+
+
+
+
       </div>
-  </div>
     </div>
+    
   </section>
 
   <section id="contact" class="container content-section text-center light-section">

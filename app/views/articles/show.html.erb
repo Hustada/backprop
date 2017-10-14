@@ -17,8 +17,17 @@
 <% end %>
 <br><br>
 
-<div class="container">
+<div class="container centering">
 		<%= simple_format(@article.body, class: "article-body article-paragraph js--article-body") %>
+		<div class="next-previous">
+				<% if @article.previous_article %>
+					<%=link_to "< Previous", @article.previous_article %>
+				<% end %> --
+				<% if @article.next_article %>
+					<%=link_to "Next >", @article.next_article %>
+				<% end %>
+		</div>
+		
 		<p><%=link_to 'home', root_path %></p>
 		<% if user_signed_in?  && is_admin? %>
 		<%=link_to 'delete article', (@article),
