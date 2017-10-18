@@ -17,6 +17,13 @@ class ArticlesController < ApplicationController
 	def show
 		@article = Article.find(params[:id])
 		@user = User.find_by(params[:user_id])
+		set_meta_tags :og => {
+                  :title    => "#{@article.title}",
+                  :description => "#{@article.body}",
+                  :type     => "Blog article",
+                  :url      => "#{article_url(@article)}",
+                  :image    => "#{@article.image.url}",
+                  }
 	end
 
 	def index
