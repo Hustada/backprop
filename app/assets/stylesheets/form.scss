@@ -2,7 +2,15 @@
 	height: 100%;
 	width: 100%;
 	margin: auto;
+	background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('darkgraywall.jpg');
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('darkgraywall.jpg');
 	display: table;
 	top: 0;
 	background-size: cover;
+}
+
+.sign-panel {
+	background-color: #222;
+	margin-top: 50px;
+	color: #fff;
 }
