@@ -44,7 +44,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :debug
+  config.log_level = :debug 
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
@@ -64,11 +64,10 @@ Rails.application.configure do
     address: 'smtp.gmail.com',
     port: 587,
     domain: 'gmail.com',
-    authentication: 'plain', 
+    authentication: :plain, 
     user_name: ENV['GMAIL_USERNAME'],
     password: ENV['GMAIL_PASSWORD'],
     enable_starttls_auto: true,
-    openssl_verify_mode: 'none'
 }
 
   config.paperclip_defaults = {
