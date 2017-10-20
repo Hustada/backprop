@@ -67,7 +67,8 @@ Rails.application.configure do
     authentication: 'login', 
     user_name: ENV['GMAIL_USERNAME'],
     password: ENV['GMAIL_PASSWORD'],
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    penssl_verify_mode: 'none'
 }
 
   config.paperclip_defaults = {
