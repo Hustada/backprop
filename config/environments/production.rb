@@ -68,7 +68,7 @@ Rails.application.configure do
     user_name: ENV['GMAIL_USERNAME'],
     password: ENV['GMAIL_PASSWORD'],
     enable_starttls_auto: true,
-    penssl_verify_mode: 'none'
+    openssl_verify_mode: 'none'
 }
 
   config.paperclip_defaults = {
