@@ -113,7 +113,7 @@
         <% @popular_articles.each do |article| %>
                 <div class="col-sm-3">
                   <div class="card card-inverse">
-                    <%= image_tag(article.header.url, class: "card-img img-responsive") %>
+                    <%=link_to image_tag(article.header.url, class: "card-img img-responsive"), article %>
                     <div class="card-img-overlay">
                       <h5 class="card-title"><%=link_to "#{article.title}", article %></h5>
                       <p class="card-text"><small class="text-muted">posted <%= time_ago_in_words(article.created_at) %> ago</small></p>
