@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
                   :type     => "Blog article",
                   :url      => "#{article_url(@article)}",
                   :image    => "#{@article.image.url}",
+                  :video    => "#{@article.video_url}"
                   }
 	end
 
@@ -39,7 +40,7 @@ class ArticlesController < ApplicationController
 
 	def update
 		@article = Article.find(params[:id])
-		if @article.update(params[:article].permit(:title, :body, :image, :header))
+		if @article.update(params[:article].permit(:title, :body, :image, :header, :video_url))
 			redirect_to @article
 		else
 			render 'edit'

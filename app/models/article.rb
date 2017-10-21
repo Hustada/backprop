@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
 	has_attached_file :header, styles: { large: "900X900#", medium: "300X300>", thumb: "150X150#"}
 																		 # :convert_options => { :large => "-quality 92" }
 	validates_attachment_content_type :header, content_type: /\Aimage\/.*\z/
-	belongs_to :user
+	belongs_to :user, optional: true
 
 	@@video_regexp = [ /^(?:https?:\/\/)?(?:www\.)?youtube\.com(?:\/v\/|\/watch\?v=)([A-Za-z0-9_-]{11})/, 
                    /^(?:https?:\/\/)?(?:www\.)?youtu\.be\/([A-Za-z0-9_-]{11})/,
