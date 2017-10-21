@@ -13,7 +13,7 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('creepylight.jpg');
 }*/
 
-/*#intro {
+#intro {
   height: 100%;  
   width: 100%;
   margin: auto;
@@ -25,17 +25,6 @@
   background-position: center;
   text-align: center;
   color: #fff
-}*/
-
-#intro {
- background: image_url('creepylight.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  text-align: center;
-  color: #fff;
-  height: 100%;
 }
 
 /*body {

@@ -17,18 +17,4 @@
   .brand-heading {
     font-size: 80px;
   }
-
-    #intro {
-    height: 100%;  
-    width: 100%;
-    margin: auto;
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('creepylight.jpg');
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('creepylight.jpg');
-    display: table;
-    top: 0;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: #fff
-  }
 }
