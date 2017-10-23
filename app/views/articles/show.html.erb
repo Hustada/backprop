@@ -5,16 +5,15 @@
 		<i><%=@article.user.username %> <% end %> -- <%= @article.created_at.strftime("%h %d %y") %></i>
 </div>
 	<br>
-<% if @article.header.present? && !@article.video_url %>
-	<%= image_tag @article.header.url, class: "article-show-image" %>
-<% end %>
+<% if @article.image.exists? && !@article.video_url.present? %>
+	<%= image_tag @article.image.url, class: "article-show-image" %>
 </header>
-
-<%-# The video container code below allows for full width, full screen embed in erb files(reminding myself), add the ruby code in as a class for iframe -%>
-<% if @article.video_url.present? %>
+<% else %>
+<!-- # The video container code below allows for full width, full screen embed in erb files(reminding myself), add the ruby code in as a class for iframe -->
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item", <%= embed(@article.video_url) %> allowfullscreen></iframe>
+  <iframe src='https://www.youtube.com/embed/<%= video_id(@article.video_id) %>?rel=0&autohide=1&showinfo=0&0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
 </div>
+
 <% end %>
 <br><br>
 
