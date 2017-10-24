@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#flash-message').delay(1000).fadeIn('slow').delay(2000);
+	$('#flash-message').delay(1000).fadeIn('slow').delay(2000).fadeOut('slow');
   // $('#js--main-nav').addClass('js--main-nav-delay');
 
   // setTimeout(function () { 
