@@ -68,7 +68,11 @@
         <% @popular_articles.each do |article| %>
                 <div class="col-sm-3">
                   <div class="card card-inverse">
+                    <% if article.image.present? %>
                     <%=link_to image_tag(article.header.url, class: "card-img thumbnail img-responsive"), article %>
+                    <% else %>
+                    <%= link_to image_tag(get_random_image, class: 'card-img thumbnail img-responsive'), article %>
+                    <% end %>
                     <div class="card-img-overlay">
                       <h5 class="card-title"><%=link_to "#{article.title}", article %></h5>
                       <p class="card-text"><small class="text-muted">posted <%= time_ago_in_words(article.created_at) %> ago</small></p>
