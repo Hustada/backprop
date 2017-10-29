@@ -15,5 +15,13 @@ module ArticlesHelper
     image_files = Dir.glob("#{image_path_prefix}random-images/*")
     image_files.sample.split(image_path_prefix)[1]
   end
-	
+
+  def get_images
+		@images = Dir.glob("app/assets/images/random-images/*")
+	end
+
 end
+
+ 
+
+

@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+	include ApplicationHelper
+	before_action :get_images
 	before_action :authenticate_user!, only: [:create, :update, :destroy]
 
 	def new
