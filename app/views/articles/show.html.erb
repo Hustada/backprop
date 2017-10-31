@@ -29,8 +29,7 @@
 					<%=link_to "Next >", @article.next_article %>
 				<% end %>
 		</div>
-		
-		<p><%=link_to 'home', root_path %></p>
+<br><br>
 		<% if user_signed_in?  && is_admin? %>
 		<div class="button-container centering">
 			<%=link_to 'delete article', (@article),
