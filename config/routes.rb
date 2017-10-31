@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 	get '/about', to: 'static_pages#about'
 	get '/test', to: 'static_pages#index'
 
-	resources :articles
+	resources :articles do
+		get 'list', :on => :collection
+	end
 
 	resources :workouts do
 		resources :exercises

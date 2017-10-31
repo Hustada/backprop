@@ -1,0 +1,20 @@
+<div class="container">
+	<h3 class="index-article-title"><%= link_to article.title, article_path(article) %></h3>
+  	<small><em>posted <%= time_ago_in_words article.created_at %> ago</em></small>
+  <br>
+  <br>
+		<% if article.image? %>
+	  <%= image_tag article.image.url(:large), class: "img-fluid list-article-show-image" %>
+	  <br>
+	  <% end %>
+	  <p class="index-article-paragraph"><%= truncate(strip_tags(article.body), length: 600) %></p>
+	  <div class="button-container centering">
+          <% if user_signed_in?  && is_admin? %>
+          <%=link_to 'Delete article', (article),
+                      method: :delete,
+                      class: "btn btn-default",
+                      data: {confirm: "Are you sure?" } %>
+          <%=link_to 'Edit article', edit_article_path(article), class: "btn btn-default" %>
+          <% end %>
+    </div>
+</div>

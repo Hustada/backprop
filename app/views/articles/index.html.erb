@@ -49,7 +49,7 @@
                     <p class="article-paragraph">
                       <%= @recent_article.body %>
                     </p>
-                    <%=link_to "Read More", article_path(@recent_article), class: "btn btn-default" %>
+                    <%=link_to "Read More", list_articles_path, class: "btn btn-default" %>
                     <% else %>
                     <%= render 'shared/dummy-article' %>
                   <% end %>
@@ -88,9 +88,7 @@
     </div>
     
   </section>
-
-  <section id="contact" class="container content-section text-center black-section">
-     <%= render 'shared/new-footer' %>
-  </section>
 </body>
+
+<%= render 'shared/new-footer' %>
 

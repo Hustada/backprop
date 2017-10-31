@@ -1,8 +1,10 @@
+<%= render 'shared/alt-nav' %>
+
 <header>
-<div class="container">
+<div class="container article-show-container">
 	<h1 class="article-title js--article-title"><%= @article.title.upcase %></h1>
 	<% unless @article.user.nil? %>
-		<i><%=@article.user.username %> <% end %> -- <%= @article.created_at.strftime("%h %d %y") %></i>
+		<i><%=@article.user.username %> <% end %> -- <%= time_ago_in_words(@article.created_at) %> ago</i>
 </div>
 	<br>
 <% if @article.image.exists? && !@article.video_url.present? %>
@@ -17,7 +19,7 @@
 <% end %>
 <br><br>
 
-<div class="container centering">
+<div class="container">
 		<%= simple_format(@article.body, class: "article-body article-paragraph js--article-body") %>
 		<div class="next-previous">
 				<% if @article.previous_article %>
@@ -30,10 +32,13 @@
 		
 		<p><%=link_to 'home', root_path %></p>
 		<% if user_signed_in?  && is_admin? %>
-		<%=link_to 'delete article', (@article),
-								method: :delete,
-								class: "button",
-								data: {confirm: "Are you sure?" } %>
-		<%=link_to 'edit article', edit_article_path(@article), class: "button" %>
+		<div class="button-container centering">
+			<%=link_to 'delete article', (@article),
+									method: :delete,
+									class: "btn btn-default",
+									data: {confirm: "Are you sure?" } %>
+			<%=link_to 'edit article', edit_article_path(@article), class: "btn btn-default" %>
+		</div>
 		<% end %>
 </div>
+<%= render 'shared/new-footer' %>

@@ -1,0 +1,18 @@
+<%= render 'shared/alt-nav' %>
+<div class="container article-show-container">
+<div class="page-header index-article-header">
+  <h1>Articles <small></small></h1>
+</div>
+	<div class="row">
+		<div class="col-md-12">
+				<div id="my-posts">
+			  	<%= render @articles %>
+				</div>
+
+				<div id="infinite-scrolling" class="center-loading">
+			  	<%= will_paginate %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%= render 'shared/new-footer' %>
