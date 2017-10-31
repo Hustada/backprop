@@ -69,6 +69,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-will_paginate (1.0.0)
+      will_paginate
     builder (3.2.2)
     byebug (9.0.5)
     climate_control (0.0.3)
@@ -274,6 +276,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap-will_paginate
   byebug
   coffee-rails (~> 4.2)
   devise
