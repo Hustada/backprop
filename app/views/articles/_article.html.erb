@@ -7,7 +7,7 @@
 	  <%= image_tag article.image.url(:large), class: "img-fluid list-article-show-image" %>
 	  <br>
 	  <% end %>
-	  <p class="index-article-paragraph"><%= truncate(strip_tags(article.body), length: 600) %></p>
+	  <p class="index-article-paragraph article-paragraph"><%= truncate(strip_tags(article.body), length: 600) %></p>
 	  <div class="button-container centering">
           <% if user_signed_in?  && is_admin? %>
           <%=link_to 'Delete article', (article),
