@@ -45,7 +45,7 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                   <% if @article.nil? %>
-                    <h2 class="center-title"><%= @recent_article.title  %></h2>
+                    <h2 class="center-title"><%=link_to "#{@recent_article.title}", article_path(@recent_article)  %></h2>
                     <p class="article-paragraph">
                       <%= @recent_article.body %>
                     </p>
