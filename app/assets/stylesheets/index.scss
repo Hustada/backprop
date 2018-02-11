@@ -1,3 +1,17 @@
+#intro {
+  height: 100%;  
+  width: 100%;
+  margin: auto;
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('mountain-night.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('mountain-night.jpg');
+  display: table;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff
+}
+
 .thumbnail-title {
 	position: absolute;
 	text-align: center;
@@ -45,10 +59,12 @@ img:hover {
 
 .module p {
   font-size: 12px;
+  color: #999;
 }
 
 .info p, blockquote {
-  font-size: 14px;
+  font-size: 15px;
+  color: #999;
 }
 
 blockquote {
