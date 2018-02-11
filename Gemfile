@@ -29,6 +29,7 @@ gem 'pry-byebug'
 gem 'bootstrap-sass'
 gem 'sprockets-rails'
 gem 'meta-tags'
+gem 'highlighting'
 
 # For sign in with google
 gem "omniauth-google-oauth2", "~> 0.2.1"

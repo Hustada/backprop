@@ -1,7 +1,7 @@
 class AmazonProxy
 	Amazon::Ecs.configure do |options|
-		options[:AWS_access_key_id] = ENV["AWS_access_key_id"]
-		options[:AWS_secret_key] = ENV["AWS_secret_key"]
+		options[:AWSAccessKeyId] = ENV["AWSAccessKeyId"]
+		options[:AWSSecretKey] = ENV["AWSSecretKey"]
 		options[:associate_tag] = ENV["associate_tag"]
 	end	
 

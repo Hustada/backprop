@@ -31,3 +31,30 @@ img:hover {
   right: 0;
   min-height: 100%; /* optional: if you want the smallest images to fill the .thumbnail */
 }
+
+
+
+.module {
+  padding-bottom: 85px;
+}
+
+.module h3 {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.module p {
+  font-size: 12px;
+}
+
+.info p, blockquote {
+  font-size: 14px;
+}
+
+blockquote {
+  border-left: 1px solid white;
+}
+
+// #recent {
+//   background: linear-gradient(black, gray);
+// }

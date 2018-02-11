@@ -40,54 +40,78 @@
     </div>
   </section>
 
-  <section id="article" data-speed="2" data-type="background" class="content-section paragraph-section">
-        <div class="article-section ">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                  <% if @article.nil? %>
-                    <h2 class="center-title"><%=link_to "#{@recent_article.title}", article_path(@recent_article)  %></h2>
-                    <p class="article-paragraph">
-                      <%= @recent_article.body %>
-                    </p>
-                    <%=link_to "Read More", list_articles_path, class: "btn btn-default" %>
-                    <% else %>
-                    <%= render 'shared/dummy-article' %>
-                  <% end %>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  
-  <section id="recent" data-speed="2" data-type="background" class="text-center dark-section-background smaller-content-section">
-    <h2>Recent Posts</h2><br><br>
-   <div class="container">
+<section id="recent" data-speed="2" data-type="background" class="content-section">
+  <div class="container">
       <div class="row">
-
-        <% @popular_articles.each do |article| %>
-                <div class="col-sm-3">
-                  <div class="card card-inverse">
-                    <% if article.image.present? %>
-                    <%=link_to image_tag(article.image.url, class: "card-img thumbnail img-responsive"), article %>
-                    <% else %>
-                    <%= link_to image_tag(get_random_image, class: 'card-img thumbnail img-responsive'), article %>
-                    <% end %>
-                    <div class="card-img-overlay">
-                      <h5 class="card-title"><%=link_to "#{article.title}", article %></h5>
-                      <p class="card-text"><small class="text-muted">posted <%= time_ago_in_words(article.created_at) %> ago</small></p>
-                    </div>
-                  </div>
-                </div>
-        <% end %>
-
-
-
-
-
+          <div class="col-sm-12">
+              <h3>Recent Work</h3>
+          </div>
+      <% @popular_articles.each do |a| %>
+          <div class="module col-sm-3">
+              <%=link_to image_tag(a.image.url(:medium), class: "thumbnail img-responsive"), a %>
+              <h3><%=link_to "#{a.title.downcase}", article_path(a) %></h3>
+              <p><%= a.body.truncate(100) %></p>
+          </div>
+      <% end %>
       </div>
+      
+    <div class="info row">
+
+      <div class="col-sm-6">
+        <h3>Recent Post</h3>
+        <% if @article.nil? %>
+        <h2><%=link_to "#{@recent_article.title}", article_path(@recent_article)  %></h2>
+        <p><%= @recent_article.body %></p>
+        <p>
+          <%=link_to "Read More", @recent_article, class: "btn btn-default" %>
+            <% else %>
+            <%= render 'shared/dummy-article' %>
+          <% end %>
+        </p>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-6">
+            <h3>About Me</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <h3>Recent Tweet</h3>
+            <blockquote>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel quam elementum pulvinar etiam non quam. Viverra vitae congue eu consequat ac felis donec et."
+            </blockquote>
+            <p>Something</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    
-  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</section>
 </body>
 
 <%= render 'shared/new-footer' %>
