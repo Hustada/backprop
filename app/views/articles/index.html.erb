@@ -44,7 +44,7 @@
         <h3>Recent Post</h3>
         <% if @article.nil? %>
         <h2><%=link_to "#{@recent_article.title}", article_path(@recent_article)  %></h2>
-        <p><%= @recent_article.body %></p>
+        <p><%= @recent_article.body.truncate(300) %></p>
         <p>
           <%=link_to "Read More", @recent_article, class: "btn btn-default" %>
             <% else %>

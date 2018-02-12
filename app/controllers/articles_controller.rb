@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
 	def destroy
 		@article = Article.find(params[:id])
 		@article.destroy
-		redirect_back(fallback_location: root_path)
+		redirect_to root_path
 	end
 
 	def list
