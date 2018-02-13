@@ -18,9 +18,8 @@
 
 <% end %>
 <br><br>
-
 <div class="container">
-		<%= simple_format(@article.body, class: "article-body article-paragraph js--article-body") %>
+		<%= simple_format(markdown(@article.body), class: "article-body article-paragraph js--article-body") %>
 		<div class="next-previous">
 				<% if @article.previous_article %>
 					<%=link_to "< Previous", @article.previous_article %>
