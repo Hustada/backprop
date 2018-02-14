@@ -62,11 +62,12 @@
             </p>
           </div>
           <div class="col-sm-6">
-            <h3>Recent Tweet</h3>
-            <blockquote>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel quam elementum pulvinar etiam non quam. Viverra vitae congue eu consequat ac felis donec et."
-            </blockquote>
-            <p>Something</p>
+            <h3>Tags</h3>
+            <div id="tag_cloud">
+                <% tag_cloud Article.tag_counts, %w[s m l] do |tag, css_class| %>
+                <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

@@ -41,5 +41,7 @@ Rails.application.routes.draw do
 		end
 	end
 
+	get 'tags/:tag', to: 'articles#list', as: :tag
+
 	resources :books, :only => :index
 end

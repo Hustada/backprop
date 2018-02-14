@@ -1,4 +1,5 @@
 module ArticlesHelper
+	include ActsAsTaggableOn::TagsHelper
 
 	def embed(video_url)
   	youtube_id = video_url.split("=").last

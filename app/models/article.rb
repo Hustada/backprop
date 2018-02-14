@@ -7,6 +7,7 @@ class Article < ActiveRecord::Base
 																		 # :convert_options => { :large => "-quality 92" }
 	validates_attachment_content_type :header, content_type: /\Aimage\/.*\z/
 	belongs_to :user, optional: true
+	acts_as_taggable_on :tags
 
 	@@video_regexp = [ /^(?:https?:\/\/)?(?:www\.)?youtube\.com(?:\/v\/|\/watch\?v=)([A-Za-z0-9_-]{11})/, 
                    /^(?:https?:\/\/)?(?:www\.)?youtu\.be\/([A-Za-z0-9_-]{11})/,

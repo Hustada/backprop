@@ -57,7 +57,7 @@ class ArticlesController < ApplicationController
 
 	def list
 	@user = current_user
-	@articles = Article.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+	@articles = Article.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 10).order('created_at DESC')
 		respond_to do |format|
 	  	format.html
 	  	format.js
@@ -72,6 +72,6 @@ class ArticlesController < ApplicationController
 private
 
 	def article_params
-		params.require(:article).permit(:title, :body, :image, :header, :video_url)
+		params.require(:article).permit(:title, :body, :image, :header, :video_url, :tag_list)
 	end
 end

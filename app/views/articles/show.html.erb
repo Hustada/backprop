@@ -5,6 +5,10 @@
 	<h1 class="article-title js--article-title"><%= @article.title.upcase %></h1>
 	<% unless @article.user.nil? %>
 		<i><%=@article.user.username %> <% end %> -- <%= time_ago_in_words(@article.created_at) %> ago</i>
+		<br>
+		<% if !@article.tag_list.blank? %>
+			<p class="tags">Tags: <%= raw @article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+		<% end %>
 </div>
 	<br>
 <% if @article.image.exists? && !@article.video_url.present? %>
@@ -15,7 +19,6 @@
 <div class="embed-responsive embed-responsive-16by9">
   <iframe src='https://www.youtube.com/embed/<%= video_id(@article.video_id) %>?rel=0&autohide=1&showinfo=0&0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
 </div>
-
 <% end %>
 <br><br>
 <div class="container">

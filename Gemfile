@@ -32,6 +32,7 @@ gem 'meta-tags'
 gem 'highlighting'
 gem 'redcarpet'
 gem 'pygments.rb'
+gem 'acts-as-taggable-on', '~> 4.0'
 
 # For sign in with google
 gem "omniauth-google-oauth2", "~> 0.2.1"
