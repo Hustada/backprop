@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require prism 
-//= require prism-ruby
+//= require turbolinks
+//= require_tree .

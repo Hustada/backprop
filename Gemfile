@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'font-ionicons-rails'
 gem "font-awesome-rails"
+gem 'turbolinks'
 gem 'auto_html'
 gem 'devise'
 gem 'figaro'
