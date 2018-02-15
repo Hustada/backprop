@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 	get '/test', to: 'static_pages#index'
 
 	resources :articles do
-		get 'list', :on => :collection
+		get 'tag_list', :on => :collection
+		get 'list_all', :on => :collection
 	end
 
 	resources :workouts do
@@ -41,7 +42,7 @@ Rails.application.routes.draw do
 		end
 	end
 
-	get 'tags/:tag', to: 'articles#list', as: :tag
+	get 'tags/:tag', to: 'articles#tag_list', as: :tag
 
 	resources :books, :only => :index
 end

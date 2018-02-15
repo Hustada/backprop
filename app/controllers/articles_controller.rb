@@ -55,9 +55,18 @@ class ArticlesController < ApplicationController
 		redirect_to root_path
 	end
 
-	def list
+	def tag_list
 	@user = current_user
 	@articles = Article.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 10).order('created_at DESC')
+		respond_to do |format|
+	  	format.html
+	  	format.js
+		end
+	end
+
+	def list_all
+	@user = current_user
+	@articles = Article.paginate(page: params[:page], per_page: 10).order('created_at DESC')
 		respond_to do |format|
 	  	format.html
 	  	format.js
