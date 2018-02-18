@@ -12,6 +12,6 @@
   Article.create!(title: "Lipsum Post #{i}", body: %{
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat purus dapibus fermentum sagittis. Fusce in tempus felis. Phasellus a erat ut lorem lacinia bibendum. Vivamus viverra facilisis neque, in scelerisque urna pharetra vel. Donec a est mauris. Integer eget metus quis eros egestas elementum. Integer bibendum risus hendrerit dapibus tempor. Fusce placerat in orci vitae tincidunt.
   },
-  image_file_name: File.new(Rails.root + "app/assets/images/serversinside.jpg"),
-  header_file_name: 	File.new(Rails.root + "app/assets/images/darkcode.jpg"))
+  image: File.new(Rails.root + "app/assets/images/serversinside.jpg"),
+  header: 	File.new(Rails.root + "app/assets/images/darkcode.jpg"))
 end

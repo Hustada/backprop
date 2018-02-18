@@ -15,4 +15,5 @@ Rails.application.config.assets.precompile += %w(
  ionicons.min.css,
  animate.css,
  queries.scss,
- custom.js)
+ custom.js,
+ pagination.js)
