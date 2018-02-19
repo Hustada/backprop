@@ -7,6 +7,7 @@ class User < ApplicationRecord
   :omniauth_providers => [:facebook, :twitter, :google_oauth2]
   has_many :workouts
   has_many :articles
+  has_many :comments
 
   def self.from_omniauth(auth)
   	where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -17,4 +18,13 @@ class User < ApplicationRecord
   		user.save
   	end
   end
+
+  def name
+    if !User.name.nil?
+      name = username
+    else
+      name = self.email
+    end
+  end
+
 end

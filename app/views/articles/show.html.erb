@@ -23,15 +23,11 @@
 <br><br>
 <div class="container">
 		<%= simple_format(markdown(@article.body), class: "article-body article-paragraph js--article-body") %>
-		<div class="next-previous">
-				<% if @article.previous_article %>
-					<%=link_to "< Previous", @article.previous_article %>
-				<% end %> --
-				<% if @article.next_article %>
-					<%=link_to "Next >", @article.next_article %>
-				<% end %>
-		</div>
 <br><br>
+<%= render 'comments/form' %>
+<br>
+<%= render @article.comments %>
+
 		<% if user_signed_in?  && is_admin? %>
 		<div class="button-container centering">
 			<%=link_to 'delete article', (@article),
@@ -42,5 +38,14 @@
 		</div>
 		<% end %>
 </div>
+<br>
+<div class="next-previous">
+				<% if @article.previous_article %>
+					<%=link_to "< Previous", @article.previous_article %>
+				<% end %> --
+				<% if @article.next_article %>
+					<%=link_to "Next >", @article.next_article %>
+				<% end %>
+		</div>
 <br><br>
 <%= render 'shared/new-footer' %>

@@ -1,0 +1,11 @@
+<%= render 'shared/alt-nav' %>
+	<div class="container">
+		<%= simple_form_for([@article, Comment.new]) do |f| %>
+			<br>
+		  <%= f.text_field :body, placeholder: 'Comment on this...', class: "col-xs-12 article-text-input", cols: 40, rows: 30 %>
+
+		  <%= f.button :submit %>
+		  <%=link_to 'Cancel', articles_path, class: "btn btn-default" %>
+		<% end %>
+	</div>
+</body>

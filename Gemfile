@@ -18,7 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'font-ionicons-rails'
 gem "font-awesome-rails"
 gem 'turbolinks'
-gem 'auto_html'
+gem 'auto_html', '~>1.6.4'
 gem 'devise'
 gem 'figaro'
 gem 'amazon-ecs'

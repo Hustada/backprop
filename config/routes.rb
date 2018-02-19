@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 	resources :articles do
 		get 'tag_list', :on => :collection
 		get 'list_all', :on => :collection
+		resources :comments do
+		end
 	end
 
 	resources :workouts do
