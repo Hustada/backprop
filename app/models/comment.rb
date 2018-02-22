@@ -2,6 +2,7 @@ class Comment < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :article
 	validates :body, presence: true
+    validates_presence_of :user
 
 	auto_html_for :body do
     html_escape

@@ -21,7 +21,7 @@
     max-width: 100%; /* do not stretch the bootstrap column */
 }
 
-img:hover {
+a img.thumbnail:hover {
   opacity: 0.5;
   -webkit-transition: all 0.3s linear;
        -moz-transition: all 0.3s linear;
