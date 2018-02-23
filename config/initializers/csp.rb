@@ -21,7 +21,6 @@ SecureHeaders::Configuration.default do |config|
 				'self'
 				https://fonts.googleapis.com
 				http://maxcdn.bootstrapcdn.com
-        https://www.backpropagate.io/assets/font-awesome.css
       )
     }
     # Use the following if you have CSP issues locally with 
