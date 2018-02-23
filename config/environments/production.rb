@@ -1,6 +1,13 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Set HTTP/S security headers
+  config.action_dispatch.default_headers = {
+    'Referrer-Policy' => 'strict-origin-when-cross-origin',
+    'X-Content-Type-Options' => 'nosniff',
+    'X-Frame-Options' => 'SAMEORIGIN',
+    'X-XSS-Protection' => '1; mode=block'
+  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
