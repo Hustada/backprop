@@ -16,7 +16,12 @@ SecureHeaders::Configuration.default do |config|
       script_src: %w(
         'self'
         'unsafe-inline'
-        https://cdnjs.cloudflare.com)
+        https://cdnjs.cloudflare.com),
+      style_src: %w(
+				'self'
+				https://fonts.googleapis.com
+				http://maxcdn.bootstrapcdn.com
+      )
     }
     # Use the following if you have CSP issues locally with 
     # tools like webpack-dev-server
