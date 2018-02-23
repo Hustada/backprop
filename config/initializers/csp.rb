@@ -1,11 +1,26 @@
 SecureHeaders::Configuration.default do |config|
-  config.csp = {
-    report_only: Rails.env.production?, # default: false
-    preserve_schemes: true, # default: false.
-    default_src: %w(*), # all allowed in the beginning
-    script_src: %w('self', 'https://maxcdn.bootstrapcdn.com','https://ajax.googleapis.com'),
-    connect_src: %w('self'),
-    style_src: %w('self','unsafe-inline','https://maxcdn.bootstrapcdn.com','https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'),
-    report_uri: ["/csp_report?report_only=#{Rails.env.production?}"]
-  }
-end
+    config.csp = {
+      default_src: Rails.env.production? ? %w(https: 'self') : %w(http: 'self' 'unsafe-inline'),
+      connect_src: %w(
+        'self'
+      ),
+      font_src: %w(
+        'self'
+        https://maxcdn.bootstrapcdn.com
+        https://fonts.gstatic.com
+      ),
+      img_src: %w(
+        'self'
+        https://hustad.s3-us-west-1.amazonaws.com
+      ),
+      script_src: %w(
+        'self'
+        'unsafe-inline'
+        https://cdnjs.cloudflare.com)
+    }
+    # Use the following if you have CSP issues locally with 
+    # tools like webpack-dev-server
+    if !Rails.env.production?
+      config.csp[:connect_src] << "*"
+    end
+  end
