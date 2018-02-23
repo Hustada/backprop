@@ -3,10 +3,10 @@ Rails.application.configure do
 
   # Set HTTP/S security headers
   config.action_dispatch.default_headers = {
-    'Referrer-Policy' => 'strict-origin-when-cross-origin',
     'X-Content-Type-Options' => 'nosniff',
     'X-Frame-Options' => 'SAMEORIGIN',
-    'X-XSS-Protection' => '1; mode=block'
+    'X-XSS-Protection' => '1; mode=block',
+    'Referrer-Policy' => 'strict-origin-when-cross-origin'
   }
   # Code is not reloaded between requests.
   config.cache_classes = true
