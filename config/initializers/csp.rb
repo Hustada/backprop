@@ -8,6 +8,9 @@ SecureHeaders::Configuration.default do |config|
         'self'
         https://maxcdn.bootstrapcdn.com
         https://fonts.gstatic.com
+        https://cdnjs.cloudflare.com
+        https://fonts.googleapis.com http://maxcdn.bootstrapcdn.com
+        https://localhost:3000
       ),
       img_src: %w(
         'self'
@@ -16,11 +19,20 @@ SecureHeaders::Configuration.default do |config|
       script_src: %w(
         'self'
         'unsafe-inline'
-        https://cdnjs.cloudflare.com),
+        http://localhost:3000/assets/ajax-loader.gif
+        https://cdnjs.cloudflare.com
+        https://fonts.googleapis.com
+        https://maxcdn.bootstrapcdn.com
+        https://jquery.com
+        https://localhost:3000
+        fonts.gstatic.com),
       style_src: %w(
 				'self'
 				https://fonts.googleapis.com
-				http://maxcdn.bootstrapcdn.com
+				https://maxcdn.bootstrapcdn.com
+        https://localhost:3000
+        https://jquery.com
+        https://cdnjs.cloudflare.com
       )
     }
     # Use the following if you have CSP issues locally with 
