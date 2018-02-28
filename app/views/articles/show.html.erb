@@ -22,7 +22,7 @@
 <% end %>
 <br><br>
 <div class="container">
-		<%= simple_format(markdown(@article.body), class: "article-body article-paragraph js--article-body") %>
+		<%= simple_format(rouge_markdown(@article.body), class: "article-body article-paragraph js--article-body") %>
 <br><br>
 <%= render 'comments/form' %>
 <br>

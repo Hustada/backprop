@@ -35,6 +35,7 @@ gem 'redcarpet'
 gem 'pygments.rb'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'secure_headers'
+gem 'rouge'
 
 # For sign in with google
 gem "omniauth-google-oauth2", "~> 0.2.1"
