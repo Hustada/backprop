@@ -31,11 +31,12 @@ detailBox {
     margin-top:10px 0;
 }
 .commentList {
-    padding:0;
+    padding-bottom:20px;
     list-style:none;
     max-height:200px;
     overflow:auto;
     margin-bottom: 40px;
+    border-bottom: 1px solid #bbb;
 }
 .commentList li {
     margin:0;

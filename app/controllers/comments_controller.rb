@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
 		if @comment.save
 			respond_to do |format|
       	format.html { redirect_to article_path(@article)}
+      	format.js {}
       end
 		else
 			flash[:notice] = "Something's wrong"
@@ -24,7 +25,10 @@ class CommentsController < ApplicationController
 		@article = Article.find(params[:article_id])
 		@comment = Comment.find(params[:id])
 		@comment.destroy
-		redirect_to article_path(@article)
+			respond_to do |format|
+			format.html { redirect_to article_path(@article) }
+			format.js { }
+		end
 	end
 
 	def edit
