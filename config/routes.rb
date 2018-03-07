@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 	get '/demo', to: 'static_pages#demo'
 	get '/about', to: 'static_pages#about'
 	get '/test', to: 'static_pages#index'
+	get '/contact', to: 'static_pages#contact'
 
 	resources :articles do
 		get 'tag_list', :on => :collection
