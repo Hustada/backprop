@@ -1,6 +1,5 @@
 <ul class="commentList">
   <li>
-    
     <div class="commentText">
         <p class=""><%= comment.body_html %></p> <span class="date sub-text"><%= comment.user.username ? comment.user.username : comment.user.email %> on <%= comment.created_at.strftime("%d %b. %Y") %>
         <% if comment.user == current_user %>

@@ -24,9 +24,18 @@
 <div class="container">
 		<%= simple_format(rouge_markdown(@article.body), class: "article-body article-paragraph js--article-body") %>
 <br><br>
-<%= render 'comments/form' %>
-<br>
-<%= render @article.comments %>
+<div id="comment-form">
+    <%= render 'comments/form' %>
+  </div>
+  <div id="comment-list" >
+    <% if @comments.exists? %>
+        <%= render @comments %>
+    <% else %>
+        <div id = "no-comments">
+          <p> There are no comments yet.</p>
+        </div>
+    <% end %>
+  </div>
 
 		<% if user_signed_in?  && is_admin? %>
 		<div class="button-container centering">
