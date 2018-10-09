@@ -1,4 +1,4 @@
-ruby  '2.3.7'
+ruby  '2.4.4'
 source 'https://rubygems.org'
 
 
@@ -39,7 +39,6 @@ gem 'rouge'
 
 # For sign in with google
 gem "omniauth-google-oauth2", "~> 0.2.1"
-gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
 group :development, :test do
