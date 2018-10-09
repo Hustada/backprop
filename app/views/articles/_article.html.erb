@@ -4,7 +4,9 @@
   <br>
   <br>
 		<% if article.image? %>
-	  <%= image_tag article.image.url(:large), class: "img-fluid list-article-show-image" %>
+     <%= link_to article_path(article) do %>
+	     <%= image_tag article.image.url(:large), class: "img-fluid list-article-show-image" %>
+    <% end %>
 	  <br>
 	  <% end %>
 	  <p class="index-article-paragraph article-paragraph"><%= truncate(strip_tags(article.body), length: 600) %><%=link_to ' read more', article_path(article) %></p>
