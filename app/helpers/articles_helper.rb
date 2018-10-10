@@ -21,6 +21,11 @@ module ArticlesHelper
 		@images = Dir.glob("app/assets/images/random-images/*")
 	end
 
+
+	def image_with_no_video?
+		@article.image.exists? && !@article.video_url.present?
+	end
+
 end
 
  

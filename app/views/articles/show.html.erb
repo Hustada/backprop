@@ -11,7 +11,7 @@
 		<% end %>
 </div>
 	<br>
-<% if @article.image.exists? && !@article.video_url.present? %>
+<% if image_with_no_video? %>
 	<%= image_tag @article.image.url, class: "article-show-image" %>
 </header>
 <% else %>

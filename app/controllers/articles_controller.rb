@@ -78,7 +78,6 @@ class ArticlesController < ApplicationController
 		@articles = Article.all.truncate(40)
 	end
 
-
 private
 
 	def article_params
