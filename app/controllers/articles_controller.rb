@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
 
 	def update
 		@article = Article.find(params[:id])
-		if @article.update(params[:article].permit(:title, :body, :image, :header, :video_url))
+		if @article.update(params[:article].permit(:title, :body, :image, :header, :video_url, :tag_list))
 			redirect_to @article
 		else
 			render 'edit'
@@ -81,6 +81,6 @@ class ArticlesController < ApplicationController
 private
 
 	def article_params
-		params.require(:article).permit(:title, :body, :image, :header, :video_url, :tag_list)
+		params.require(:article).permit(:title, :body, :image, :header, :video_url, :tag_list => [])
 	end
 end
