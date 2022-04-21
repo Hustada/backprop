@@ -36,6 +36,7 @@ gem 'pygments.rb'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'secure_headers'
 gem 'rouge'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 # For sign in with google
 gem "omniauth-google-oauth2", "~> 0.2.1"
