@@ -23,7 +23,7 @@ module ArticlesHelper
 
 
 	def image_with_no_video?
-		@article.image.exists? && !@article.video_url.present?
+		@article.image.attached? && !@article.video_url.present?
 	end
 
 end
