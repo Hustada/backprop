@@ -24,6 +24,7 @@ gem 'figaro'
 gem 'amazon-ecs'
 gem 'aws-sdk', '~> 3', require: false
 gem 'rmagick'
+gem "mini_magick"
 gem 'simple_form'
 gem 'pry'
 gem 'pry-byebug'
