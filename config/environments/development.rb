@@ -67,15 +67,18 @@ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
       :enable_starttls_auto => true
   }
 
-config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV.fetch('S3_BUCKET_NAME'),
-    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-    s3_region: ENV.fetch('AWS_REGION'),
-  }
-}
+# config.paperclip_defaults = {
+#   storage: :s3,
+#   s3_credentials: {
+#     bucket: ENV.fetch('S3_BUCKET_NAME'),
+#     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+#     secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+#     s3_region: ENV.fetch('AWS_REGION'),
+#   }
+# }
+
+#replace paperclip with rails active storage
+config.active_storage.service = :amazon
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large

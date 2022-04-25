@@ -25,6 +25,9 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
+  # Ensure that a master key is made available for Rails 5.2 upgrade
+  config.require_master_key = true
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
@@ -89,15 +92,18 @@ Rails.application.configure do
       :enable_starttls_auto => true
   }
 
-  config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV.fetch('S3_BUCKET_NAME'),
-    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-    s3_region: ENV.fetch('AWS_REGION'),
-  }
-}
+#   config.paperclip_defaults = {
+#   storage: :s3,
+#   s3_credentials: {
+#     bucket: ENV.fetch('S3_BUCKET_NAME'),
+#     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+#     secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+#     s3_region: ENV.fetch('AWS_REGION'),
+#   }
+# }
+
+#replace paperclip with rails active storage
+config.active_storage.service = :amazon
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
