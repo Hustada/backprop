@@ -3,9 +3,9 @@
   	<small><em>posted <%= time_ago_in_words article.created_at %> ago</em></small>
   <br>
   <br>
-		<% if article.image? %>
+		<% if article.image.attached? %>
      <%= link_to article_path(article) do %>
-	     <%= image_tag article.image.url, class: "img-fluid list-article-show-image" %>
+	     <%= image_tag article.image, class: "img-fluid list-article-show-image" %>
     <% end %>
 	  <br>
 	  <% end %>

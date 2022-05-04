@@ -1339,6 +1339,9 @@ GEM
     highlighting (0.1.4)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -1449,6 +1452,8 @@ GEM
     rinku (1.5.1)
     rmagick (4.2.5)
     rouge (3.28.0)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     ruby2_keywords (0.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -1522,6 +1527,7 @@ DEPENDENCIES
   font-awesome-rails
   font-ionicons-rails
   highlighting
+  image_processing
   jbuilder (~> 2.5)
   jquery-rails
   kt-paperclip (~> 7.1, >= 7.1.1)
